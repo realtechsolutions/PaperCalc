@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaperCalc</title>
+  <link rel="stylesheet" href="papercalc.css">
+  <!--Import Google Icon Font-->
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <title>PaperCalc</title>
+</head>
+<body>
+  <nav class="blue-grey darken-4">
+    <div class="nav-wrapper">
+<div class="container">
+  <a href="#" class="brand-logo"> PaperCalc </a>
+  <a href="" class="sidenav-trigger hamberger" data-target ="slide-out"> &#9776;</a>
+  <ul class="  hide-on-med-and-down right "> 
+    <li> <a href="index.html"> PaperCalc  </a> </li>
+    <li> <a href="feedback.html"> Feedback  </a> </li>
+    <li> <a href="#"> Disclaimer </a> </li>
+    <li> <a href="#"> Support PaperCalc </a> </li>
+   </ul>
+  </div>
+    </div>
+  </nav>
+  <ul class=" sidenav " id="slide-out"> 
+    <li> <a href="index.html"> PaperCalc  </a> </li>
+    <li> <a href="about.html"> About  </a> </li>
+    <li> <a href="Feedback.html"> Feedback  </a> </li>
+        <li> <a href="contributor.html"> Become a contributor </a> </li>
+        <li> <a href="disclaimer.html"> Disclaimer </a> </li>
+      </ul>
+
+   <div class="container">
+  <p class="flow-text"> Your feedback and suggestions are important to us,please send the same to realtechsolns@gmail.com or
+    send your feedback through the form given below.
+  </p>
+   
+    <form action="https://formspree.io/f/xbjpaqdl" method="POST" >
+  
+      <label for="name" style="font-size: large;"> Name</label>
+      <input type="text" id="name" name="name" placeholder=" Name.." required>
+  
+      <label for="contact" style="font-size:17px">Contact Number</label>
+      <input type="text" id="contact" name="contact no" placeholder="Contact Number.." required>
+  
+      <label for="email" style="font-size: 17px;">Email</label>
+      <input type="email" id="email" name="Email" placeholder="Email" required>
+        
+       
+      <label for="comments" style="font-size: 17px;">Comments</label>
+      <textarea id="subject" name="Comments" placeholder="Write something.." style="height:150px; font-size: 16px; "   ></textarea>
+  
+      <input type="submit" value="Send" class="btn">
+
+      
+  
+    </form>
+  </div>
+  
+
+
+
+  <script>
+    const scriptURL = ''
+    const form = document.forms['google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+ <script> document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+ 
+ </script>  
+
+</body>
+</html>
