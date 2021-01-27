@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,108 +12,113 @@
 
   <title>PaperCalc</title>
 </head>
-
 <body>
-
   <ul class=" sidenav " id="slide-out">
-    <li> <a href="index.html"> PaperCalc </a> </li>
-    <li> <a href="about.html"> About </a> </li>
-    <li> <a href="feedback.html"> Feedback </a> </li>
-    <li> <a href="contributor.html"> Become a contributor </a> </li>
-    <li> <a href="disclaimer.html"> Disclaimer </a> </li>
-  </ul>
-
+    <li > <div class="user-view">
+<div class="background" style="background-color: blanchedalmond;">  </div>
+<a href="#user"> <img class="circle" src="paperlogo.png" alt="image"></a>
+<a href=""> PaperCalc </a> </div>
+    </li>
+    
+    <li>  <a href="https://www.youtube.com/watch?v=YnK0YYGJH08"> <i> <img src="images/utube.png" alt=""  height="20px" width="20px" > 
+    </i> <span > YouTube </span> </a>  </li>
+    <li>  <a href="index.html"> <i class="material-icons"   > <img src="images/blog.png" alt=""  height="20px" width="20px"> </i>  Blog </a>  </li>
+    <li>  <a href="index.html"> <i> <img src="images/calculate.png" alt="" height="20px" width="20px"> </i>  PaperCalc </a>  </li>
+    <li>  <a href="about.html">  <i ><img src="images/info.png" alt="" height="20px" width="20px">    </i>  About </a>  </li>
+    <li> <a href="mailto:realtechsolns@gmail.com"> <i> <img src="images/mail.png" alt="" height="20px"  width="20px"   >   </i> Send Email </a> </li>
+    <li> <a href="feedback.html"> <i> <img src="images/share.png" alt="" height="20px" width="20px" >   </i> Share </a> </li> 
+    
+    <li> <a href="disclaimer.html"> <i> <img src="images/error.png" alt="" height="20px"   width="20px" 
+      >    </i> Disclaimer </a> </li>
+   
+        </ul>
   <nav class="blue-grey darken-4">
     <div class="nav-wrapper">
-
-      <a href="#" class="brand-logo"> PaperCalc </a>
+      <a href="#" class="brand-logo" style="font-size: 1.9rem;"> PaperCalc </a>
       <a href="" class="sidenav-trigger hamberger" data-target="slide-out"> &#9776;</a>
   </nav>
-
   <ul class="  hide-on-med-and-down right ">
     <li> <a href="index.html"> PaperCalc </a> </li>
-    <li> <a href="about.html"> About </a> </li>
+    <li> 
+      <a href="about.html">  </a> About  </li> 
     <li> <a href="feedback.html"> Feedback </a> </li>
-    <li> <a href="contributor.html"> Become a contributor </a> </li>
-    <li> <a href="disclaimer.html"> Disclaimer </a> </li>
+        <li> <a href="disclaimer.html"> Disclaimer </a> </li>
   </ul>
-
-
-
-
   <div class="container valign-wrapper"
-    style="background-color:orange;margin-top: 15px; padding: 5px; border-radius: 4px;width: 87vw;">
+    style="background-color:orange;margin-top: 15px; padding: 5px; border-radius: 5px;width: 87vw;">
     <label for="term"> <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
         <path d="M0 0h24v24H0z" fill="none" />
         <path
           d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
       </svg> </label>
-    <input typ
-    e="text" id="term" name="form" onkeyup="hide()" onclick="showList();hideTaskbar();hideForm() "
-      class="center-align " style=" height:30px;  font-size: 19px; " onfocus="hideFooter()" onblur="showFooter()">
+    <input typ e="text" id="term" name="form" onkeyup="hide()" onclick="showList();hideTaskbar();hideForm() "
+      class="center-align " style=" height:30px;  font-size: 19px; " >
   </div>
-
-
-  <div class="optionlist" style="overflow: auto; height: auto;width: auto;">
+  <div class=" container optionlist " style="overflow: auto; height: auto;width: auto;">
     <ul id="list" class="collection center-align" style=" font-size: 17px;">
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Alkalinity</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Acidity</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();">Alkali loss </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Brightness,Whiteness and Shade</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> BOD</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Bursting Strength </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Breaking Length </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Change in crown of two rolls</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Cobb</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Conditioning of Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Critical Speed of a roll </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Degree SR of Pulp </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Defects in Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Dosing(Batch)</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Dosing(Continuous)</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Drying Rate</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Dandy Diameter </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Dissolved Oxygen of Water </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Electric output power of motor </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> First Pass Retention </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> First Pass Ash Retention </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> HeadBox Pressure</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Headbox Flow Rate </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Kappa Number</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Machine Production Rate </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Moment of Inertia of a roll </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Pump output power</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Opacity of Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Porosity of Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Pressure Drop in Pipes</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Pump Power </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> pH of Solution</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Residual Chlorine</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Relative Humidity</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Smoothness of Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Stiffness of Paper</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Total active and effective alkali</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Tearing Factor </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Tensile Index </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> V Notch Flow Rate</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Viscosity Of Pulp</li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Vacuum Pump Capacity </li>
-      <li class="collection-item" onclick="get(this);upDateIndex();fillData();"> Weight of Ream (500 Sheets) </li>
+      <li class="collection-item" > Alkalinity</li>
+      <li class="collection-item" > Acidity</li>
+      <li class="collection-item" >Alkali loss </li>
+      <li class="collection-item" > Brightness,Whiteness and Shade</li>
+      <li class="collection-item" > BOD</li>
+      <li class="collection-item" > Bursting Strength </li>
+      <li class="collection-item" > Breaking Length </li>
+      <li class="collection-item" > Change in crown of two rolls</li>
+      <li class="collection-item" > Cobb</li>
+      <li class="collection-item" > Conditioning of Paper</li>
+      <li class="collection-item" > Critical Speed of a roll </li>
+      <li class="collection-item" > Degree SR of Pulp </li>
+      <li class="collection-item" > Defects in Paper</li>
+      <li class="collection-item" > Dosing(Batch)</li>
+      <li class="collection-item" > Dosing(Continuous)</li>
+      <li class="collection-item" > Drying Rate</li>
+      <li class="collection-item" > Dandy Diameter </li>
+      <li class="collection-item" > Dissolved Oxygen of Water </li>
+      <li class="collection-item" > Electric output power of motor </li>
+      <li class="collection-item" > First Pass Retention </li>
+      <li class="collection-item" > First Pass Ash Retention </li>
+      <li class="collection-item" > HeadBox Pressure</li>
+      <li class="collection-item" > Headbox Flow Rate </li>
+      <li class="collection-item" > Kappa Number</li>
+      <li class="collection-item" > Nip Load</li>
+      <li class="collection-item" > Machine Production Rate </li>
+      <li class="collection-item" > Moment of Inertia of a roll </li>
+      <li class="collection-item" > Pump Basics </li>
+      <li class="collection-item" > Pump output power</li>
+      <li class="collection-item" > Pump NPSHA</li>
+      <li class="collection-item" > Opacity of Paper</li>
+      <li class="collection-item" > Porosity of Paper</li>
+      <li class="collection-item" > Pressure Drop in Pipes</li>
+      <li class="collection-item" > Pump Power </li>
+      <li class="collection-item" > pH of Solution</li>
+      <li class="collection-item" > Residual Chlorine</li>
+      <li class="collection-item" > Relative Humidity</li>
+      <li class="collection-item" > Smoothness of Paper</li>
+      <li class="collection-item" > Stiffness of Paper</li>
+      <li class="collection-item" > Total active and effective alkali</li>
+      <li class="collection-item" > Tearing Factor </li>
+      <li class="collection-item" > Tensile Index </li>
+      <li class="collection-item" > V Notch Flow Rate</li>
+      <li class="collection-item" > Viscosity Of Pulp</li>
+      <li class="collection-item" > Vacuum Pump Capacity </li>
+      <li class="collection-item" > Weight of Ream (500 Sheets) </li>
     </ul>
   </div>
-
-
-
-  <div class=" container taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;">
-    <div id="taskBarCalculate" onclick=" fillData();noCalculation();" class="waves-effect btn black-text"> Calculate
-    </div>
-    <div id="taskBarDescription" class="definition waves-effect btn black-text" onclick="displayDefinition()">
+  <div class="  taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;font-weight: bold;font-size: 19px;
+   "><div id="taskBarCalculate" onclick=" fillData();noCalculation(); " 
+   style="border:ridge; border-radius: 4px; background-image: url('images/calculate.png');
+   background-repeat: no-repeat; background-position:left ;"
+    class="waves-effect btn-flat black-text"> Calculate
+     </div>
+    <div id="taskBarDescription"  style="border-radius: 4px; border: ridge;  background-image: url('images/description.png');background-repeat: no-repeat;
+    background-position: left;"  
+     class="definition waves-effect btn-flat black-text" onclick="displayDefinition()">
       Description</div>
-    <div id="more" onclick="more(); " class="waves-effect btn black-text"> ..More </div>
-
+    <div id="more" onclick="more(); "  style="border: ridge; border-radius: 4px; background-image: url('images/more.png');
+     background-repeat: no-repeat; background-position:left ;"   class="waves-effect btn-flat black-text">   More </div>
   </div>
   <div class="container">
-    <p id="definition" class="flow-text"> </p>
+    <p id="definition" class="flow-text"> </p> </div>
     <form name="form" style=" display: none;" action="">
       <div class="row  frow  valign-wrapper">
         <div class="col s6">
@@ -127,14 +131,13 @@
           Value
         </div>
       </div>
-      <div class="row yellow lighten-5 valign-wrapper " id="row1"   >
+      <div class="row yellow lighten-5 valign-wrapper " id="row1">
         <div class="col s6" id="p1">
         </div>
         <div class="col s3" id="u1">
         </div>
         <div class="col s3">
-          <input type="number" id="v1" oninput="calculate()" onblur="showFooter()" onfocus="hideFooter()"
-            ondblclick="fixValue(this)">
+          <input type="number" id="v1" class="values" oninput="calculate()" ondblclick="fixValue(this)" >
         </div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row2">
@@ -142,58 +145,54 @@
         </div>
         <div class="col s3" id="u2">
         </div>
-        <div class="col s3"> <input type="number" id="v2" oninput="calculate()" onfocus="hideFooter()"
-            onblur="showFooter()" ondblclick="fixValue(this)"></div>
+        <div class="col s3"> <input type="number" id="v2" class="values" oninput="calculate()" ondblclick="fixValue(this)">
+        </div>
       </div>
       <div class="row yellow lighten-5 valign-wrapper " id="row3">
         <div class="col s6" id="p3">
         </div>
         <div class="col s3" id="u3">
         </div>
-        <div class="col s3"> <input type="number" id="v3" oninput="calculate()" onfocus="hideFooter()"
-            onblur="showFooter()" ondblclick="fixValue(this)"></div>
+        <div class="col s3"> <input type="number" id="v3" class="values"  oninput="calculate()" ondblclick="fixValue(this)" ></div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row4">
         <div class="col s6" id="p4">
         </div>
         <div class="col s3" id="u4">
         </div>
-        <div class="col s3"> <input type="number" id="v4" oninput="calculate()" onblur="showFooter()"
-            onfocus="hideFooter()" ondblclick="fixValue(this)"></div>
+        <div class="col s3"> <input type="number" id="v4" class="values" oninput="calculate()"  ondblclick="fixValue(this)">
+        </div>
       </div>
       <div class="row yellow lighten-5 valign-wrapper " id="row5">
         <div class="col s6" id="p5">
         </div>
         <div class="col s3" id="u5">
         </div>
-        <div class="col s3"> <input type="number" id="v5" oninput="calculate()" onblur="showFooter()"
-            onfocus="hideFooter()" ondblclick="fixValue(this)"></div>
+        <div class="col s3"> <input type="number" id="v5" class="values" oninput="calculate()"  ondblclick="fixValue(this)">
+        </div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row6">
         <div class="col s6" id="p6">
         </div>
         <div class="col s3" id="u6">
         </div>
-        <div class="col s3"> <input type="number" id="v6" onchange="calculate()" onblur="showFooter()"
-            onfocus="hideFooter()"></div>
+        <div class="col s3"> <input type="number" id="v6" class="values"  ondblclick="fixValue(this)"  ></div>
       </div>
     </form>
-  </div>
+    <div class="footer"> footer</div>
+  
 
   <script>
-    // hamberger menu toggle function
-    var links = document.getElementById("links")
-    function toggle() {
-      if (links.style.display == "none") { links.style.display = "block" } else { links.style.display = "none" }
-    }
-    //  To get clicked list item in search field
-
-    function get(params) { document.getElementById("term").value = params.innerText; }
-
-    // search from list
-    var ul = document.getElementById("list")
+        //  To get clicked list item in search fieldext
+        var ul = document.getElementById("list")
     var items = ul.getElementsByTagName("li");
-    function hide() {
+        for ( let item of items) {
+item.addEventListener("click" ,function () {document.getElementById("term").value = this.innerText }) 
+item.addEventListener("click" , fillData)
+}
+
+        // search from list
+        function hide() {
       var term = document.getElementById("term").value;
       var element;
       var filter = term.toUpperCase();
@@ -234,19 +233,27 @@
     var unit4 = document.getElementById('u4')
     var unit5 = document.getElementById('u5')
     var unit6 = document.getElementById('u6')
+    var value1 = document.getElementById('v1')
+    var value2 = document.getElementById('v2')
+    var value3 = document.getElementById('v3')
+    var value4 = document.getElementById('v4')
+    var value5 = document.getElementById('v5')
+    var value6 = document.getElementById('v6')
+
+
+
     var taskBarDescription = document.getElementById("taskBarDescription")
     var taskBarCalculate = document.getElementById("taskBarCalculate")
     var taskBarMore = document.getElementById("more")
     // get index of object from calc array
-    function upDateIndex() {
-      for (let i = 0; i < calc.length; i++) {
-        term = document.getElementById("term").value;
-        if (calc[i].name === term) { index = i };
-      }
-    }
-    // to get data in html fields
+    
     function fillData() {
-      list.style.display = "none";
+      term = document.getElementById("term").value;
+ for( let obj of calc) 
+if (obj.name == term) { index = calc.indexOf(obj)}
+         
+
+list.style.display = "none";
       taskBar.style.display = "flex";
       row2.style.display = "flex "
       row3.style.display = "flex"
@@ -303,7 +310,6 @@
       taskBarMore.style.backgroundColor = "transparent"
 
     }
-
     function more() {
       if (calc[index].details) {
         description.innerHTML = "...Loading external page may take time."
@@ -337,22 +343,31 @@
     }
     //   calculate result 
     function calculate() {
-      v1 = Number(document.getElementById("v1").value);
-      v2 = Number(document.getElementById("v2").value);
-      v3 = Number(document.getElementById("v3").value);
-      v4 = Number(document.getElementById("v4").value);
-      v5 = Number(document.getElementById("v5").value);
-      v6 = Number(document.getElementById("v6").value);
-
-      document.getElementById("v6").value = calc[index].calculate().toFixed(2);
+      v1 = Number(value1.value);
+      v2 = Number(value2.value);
+      v3 = Number(value3.value);
+      v4 = Number(value4.value);
+      v5 = Number(value5.value);
+      v6 = Number(value6.value);
+          
+             value6.value = calc[index].calculate().toFixed(2)
+        
     }
-    function showFooter() { document.getElementById("footer").style.display = "flex" };
-    function hideFooter() { document.getElementById("footer").style.display = "none" };
+       
     function fixValue(val) {
       if (val.readOnly == true) { val.readOnly = false }
       else { val.readOnly = true }
+      }
+     
+      for ( let item of items) {
+item.addEventListener("click" ,function () {document.getElementById("term").value = this.innerText }) }
 
-    }
+      
+  var values = document.querySelectorAll('.values')
+for (let element of values) {element.addEventListener("change", function () {this.value = parseFloat(this.value).toFixed(2); }
+ )}
+
+
   </script>
   <script src="papercalc.js"></script>
   <!--JavaScript at end of body for optimized loading-->
@@ -361,9 +376,6 @@
       var elems = document.querySelectorAll('.sidenav');
       var instances = M.Sidenav.init(elems);
     });
-
-
   </script>
 </body>
-
 </html>
