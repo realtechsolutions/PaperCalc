@@ -22,38 +22,51 @@ function Calc(name, param1, param2, param3, param4, param5, param6, unit1, unit2
   this.details = details;
 }
 
-const Alkalanity = new Calc("Alkalinity", "Burette Reading", "Normality of Hcl", "Sample Weight", "", "", "",
-  "ml", "N", "g", "", "", "ppm", `Alkalanity is the capacity  of water to  resist changes in pH that would make water more acidic.
+const Alkalanity = new Calc("Alkalinity", "Burette Reading", "Normality of Hcl", "Sample Volume", "", "", "",
+  "ml", "N", "ml", "", "", "ppm", `Alkalanity is the capacity  of water to  resist changes in pH that would make water more acidic.
  </br> </br>It is measured by titrating sample with a acid until pH changes abruptly. 
  </br> Alkalinity is expressed as phenolphthalin alkalinity or total alkalinity. </br> </br> Phenolphthalin alkalinity measures the hydroxides and half of \
    the carbonates at ph 8.3, Phenolphthalin indicator is used in titration. </br> </br> Total alkalinity measures all carbonate,bicarbonate and hydroxide \
    alkalinity at ph 4.5 , Methyl Orange indicator is used in this titration.   </br> </br> <b> Test Procedure </b></br>  First fill beurette 
    with 0.1N Hcl then take about  50 ml sample  in conical flask and add few a drops of phenolphthalin indicator . The color of solution turns
-   pink now titrate it with 0.1 N HCl by adding HCl drop by drop till pink color disappears. </br> <img src= "https://upload.wikimedia.org/wikipedia/commons/8/8c/Titolazione.gif"> 
-  </br> Note the beurette reading and calculate alkalinity   according to formula given below </br>   Formula for calculation of Alkalinity =  A*N*50000/Sample weight, where A is beurette reading and N
+   pink now titrate it with 0.1 N HCl by adding HCl drop by drop till pink color disappears. </br> <img src= "https://upload.wikimedia.org/wikipedia/commons/8/8c/Titolazione.gif"> </br> image source Wikipedia
+     </br> Note the beurette reading and calculate alkalinity   according to formula given below </br>   Formula for calculation of Alkalinity =  A*N*50000/Sample Volume, where A is beurette reading and N
   is normality of acid.`, "https://en.wikipedia.org/wiki/Alkalinity")
-  Alkalanity.calculate = function () {  result =   (v1 * v2* 50000 / v3);
-   return result };
+  Alkalanity.calculate = function () {  value6.value = (v1 * v2* 50000 / v3).toFixed(2);}      
   //Acidity
-const Acidity = new Calc("Acidity", "Burette Reading", "Normality of NaOH", "Sample Weight", "", "", "", "ml", "N", "g", "", "",
+const Acidity = new Calc("Acidity", "Burette Reading", "Normality of NaOH", "Sample Volume", "", "", "", "ml", "N", "ml", "", "",
   "ppm", `Acidity is the capacity  of water to  resist changes in pH that would make water more alkaline.
 </br>It is measured by titrating sample  with a alkali until pH changes abruptly indicated by color change of phenolphthalin or methyl orange indicator.\
- </br> </br>Generally methyl orange acidity and phenolphthaline acidity are measured. 
-</br> </br>Formula for calculation of Acidity =  A*N*50000/Sample weight, where A is beurette reading and N is normality of Alkali solution.`,
+ </br> </br>Generally methyl orange acidity and phenolphthaline acidity are measured. </br> <b> Test Method </b> </br> Take 50-100 ml sample in conical
+ flask add few drops of phenolphthalin or methyl orang indicator and titrate with 0.5N NaOH solution till colour of solution changes.
+</br> </br>Formula for calculation of Acidity =  A*N*50000/Sample Volume, where A is beurette reading and N is normality of Alkali solution.`,
   "https://en.wikipedia.org/wiki/Acidity_function")
-Acidity.calculate = function () { return v1 * v2 * 50000 / v3 };
+Acidity.calculate = function () { value6.value = (v1 * v2 * 50000 / v3).toFixed(2) };
 //Ash Retention
 const Ash_retention = new Calc("First Pass Ash Retention", "H/B Ash", "B/W Ash", "", "", "", "", "%", "%", "", "", "", "%",
-  "First pass retention and ash retention are important process parameters for wet-end control of paper machine.\
+  `First pass retention and ash retention are important process parameters for wet-end control of paper machine.\
  </br> </br>Low values of FPR and ash retention results in inefficient use of costly furnish components.\
- </br> </br>Unretained furnish components like fillers,fibers and additives can create collection,disposal and deposits problems.")
-Ash_retention.calculate = () => (v1 - v2) * 100 / v1
+ </br> </br>  Test Method </br>  Take Head box and tray water sample at the same time then calculate Ash in Head box sample and back water
+ sample and then calculate Ash retention  as per formula. </br>Unretained furnish components like fillers,fibers and additives can create collection,disposal 
+ and deposits problems.`)
+Ash_retention.calculate = () => value6.value =  ((v1 - v2) * 100 / v1).toFixed(2)
 //Alkali Loss
 var Alkali_Loss = new Calc("Alkali loss", "Burette Reading", "Normality of Hcl", "Sample Weight", "", "", "", "ml",
   "N", "g", "", "", "kg/T", "Alkali Loss is the amount of residual alkali in pulp after washing of pulp.\
  </br>It is measured by titrating with a acid until pH changes abruptly. \
  </br>Formula for calculation  Alkali Loss = A*N*40/Sample weight where A is beurette reading and N is normality of acid." )
-Alkali_Loss.calculate = function () { return v1 * v2 * 40 / v3 };
+Alkali_Loss.calculate = function () { value6.value = (v1 * v2 * 142 / v3).toFixed(2) };
+// automatic process control 
+const Automatic_control = {name:'Automatic Process Control',definition:`Almost all continuous process plant uses some
+kind of automatic process control methods.To achieve a certain level of economy,safety and consistency automatic
+process control is necessary.It enables small number of operators to manage complex processes. Its application ranges
+from temperature,level control of single process to control of entire plant with thousands of control loop. the fundamental
+block of any control system is control loop which controls one process.Large process plants cal have thousands of
+control loop independant or interacting with other loops. A control loop consists of a process sensor,controller mechanism,
+and final control element. `}
+
+calc.push(Automatic_control)
+
 //bod
 const BOD = new Calc("BOD", "Initial DO", "Final DO", "fraction of sample used  for titration", "", "", "", "mg/l", "mg/l",
   "", "", "", "mg/l", " BOD or Biochemical oxygen demand of polluted water is the amount of oxygen required for the biological\
@@ -62,15 +75,14 @@ const BOD = new Calc("BOD", "Initial DO", "Final DO", "fraction of sample used  
    wastewater will   have on the receiving  environment. ... Depletion of DO causes stress on aquatic organisms, making the environment\
     unsuitable for life. BOD is similar to COD anlaysis. However BOD is more specific since it measures organic matter that can be oxidised\
      biologically. The BOD is used in measuring waste loadings to treatment plants and measuring efficiency of tratment plants \
-     in terms of BOD ", " https://en.wikipedia.org/wiki/Biochemical_oxygen_demand")
-     // automatic process control
+     in terms of BOD ", " https://en.wikipedia.org/wiki/Biochemical_oxygen_demand")     
         
-BOD.calculate = () => (v1 - v2) / v3;
+BOD.calculate = () => value6.value = ((v1 - v2) / v3).toFixed(2);
 const Breaking_Length = new Calc("Breaking Length", "Tensile strength", "GSM", "", "", "", "", "kN/m", "g/m2", "", "", " ", "meters",
   "Breaking length is calculated length of paper beyond which if paper  is suspended at one end it will break of its own weight.\
 </br> </br> Breaking length is calculated from Tensile strength by formula  BL = 102000(T/R) where T is tensile strength in kN/m\
  and R is paper gsm. "  )
-Breaking_Length.calculate = function () { return 102000 * v1 / v2 }
+Breaking_Length.calculate = function () { value6.value = (102000 * v1 / v2).toFixed(2) }
 //brightness whiteness and shade
 const brightness_whiteness_shade = {
   name: "Brightness,Whiteness and Shade", definition: "Brightness is a measurement of\
@@ -98,7 +110,7 @@ const Conditioning = {
 surroundings atmosphere. Amount of absorbed water depends on humidity and temperature of air in contact with paper, hence even slight changes in \
 humidity and temperature affect test results . So it is necessary to maintain standard conditions during testing of paper. </br> </br>
 Under Tappi standard all tests are carried out at 23 ${zero.sup()}C+- 1 and \
-50+2 % relative humidity.`}
+50+2 % relative humidity.</br> Also see Relative Humidity  `}
 //cobb
 var Cobb = {
   name: "Cobb", definition: "Cobb test measures amount of water absorbed in to the surface \
@@ -109,12 +121,13 @@ of a sized paper by exposing  paper surface to fixed amount of water for a certa
 var change_in_crown = new Calc("Change in crown of two rolls", "Nip width at ends", "Nip width at center",
   "Top roll diameter", "Bottom roll diameter", "", "", "mm", "mm", "mm", "mm", "", "mm", "Roll crowing is common method to reduce nip variations\
  caused by roll deflection. Roll crowing is calculated from Nip impression or deflection of roll. " )
-change_in_crown.calculate = function () { return ((Math.pow(v1, 2) - Math.pow(v2, 2)) * -(-v3 - v4)) / (2 * v3 * v4) }
+change_in_crown.calculate = function () { let result = ((Math.pow(v1, 2) - Math.pow(v2, 2)) * -(-v3 - v4)) / (2 * v3 * v4)
+value6.value = result.toFixed(2) }
 //critical speed of a roll
 const critical_speed = new Calc("Critical Speed of a roll", "Outside dia. of roll", "roll deflection", "", ""
   , "", "", "m", "m", "", "", "", "m/min", "Critical speed is the speed at which dynamic  forces causes a shaft or rotor to vibrate\
  at its natural frequency and can result in resonant vibration in the entire machinary.")
-critical_speed.calculate = () => 93.96 * v1 / Math.sqrt(v2)
+critical_speed.calculate = () =>( 93.96 * v1 / Math.sqrt(v2)).toFixed(2)
 // Dissolved oxygen
 const Dissolved_oxygen = {
   name: "Dissolved Oxygen of Water", definition: "Dissolved Oxygen of Water is ml of Sodium thiosulphate of 0.025N consumed for \
@@ -133,20 +146,20 @@ calc.push(Degree_sr)
 
 const Dandy_dia = new Calc("Dandy Diameter", "M/c Speed", "Max.rpm", "", "", "", "", "mpm", "number", "", "", "", "m",
   "For high speed machines bigger diameter of dandy roll is necessary to avoid damage to web because at high speed dandy roll throws water.")
-Dandy_dia.calculate = () => v1 / (3.14 * v2)
+Dandy_dia.calculate = () =>  value6.value = (v1 / (3.14 * v2)).toFixed(2)
 calc.push(Dandy_dia)
 
 //Dose calculation batch
 var Dose_batch = new Calc("Dosing(Batch)", "Total Volume", "Ingradient quantity", "Ingradient purity(100 for as such basis)", "", "", "", "Liters", "g",
   "%", "", "", "g/l", "Generally amount of an ingradient present in total volume or weight is calculated in \
 percentage,gpl,or ppm.   </br> </br> gpl = 10 X percentage, </br>  ppm = 1000 X gpl. ")
-Dose_batch.calculate = function () { return (v2 * v3 / 100) / v1 }
+Dose_batch.calculate = function () { value6.value = (v2 * v3 / 100) / v1 }
 calc.push(Dose_batch);
 // Dose calculation continuous
 var Dose_continuous = new Calc("Dosing(Continuous)", "Thruput ", "Ingradient Flow", "Ingradient purity(100 for as such basis)", "", "", "", "T/hr",
   "lpm", "%", "", "", "kg/T", "Dosing calculation is same as in batch, total volume becomes total flow rate and \
 ingradient amount becomes ingradient flow. ")
-Dose_continuous.calculate = function () { return (v2 * 60 * v3 / 100) / v1 }
+Dose_continuous.calculate = function () { value6.value = ((v2 * 60 * v3 / 100) / v1).toFixed(2) }
 calc.push(Dose_continuous);
 
 
@@ -155,27 +168,36 @@ var Drying_Rate = new Calc("Drying Rate", "Initial Dryness", "Final Dryness", "P
   "No. of Dryers", "", "%", "%", "T/hr", "m^2", "No", "Kg/hr/m^2 ", "Drying Rate is defined  as kg water removed per hour per\
  unit surface area."
 )
-Drying_Rate.calculate = function () { return (((v2 / v1) - 1) * v3) / v4 * v5 }
+Drying_Rate.calculate = function () { let result = (((v2 / v1) - 1) * v3) / v4 * v5
+  value6.value= result.toFixed(2) }
 calc.push(Drying_Rate);
 //motor power
 const Electric_power = new Calc("Electric output power of motor", "Current ", "Voltage", "Power factor", "Motor efficiency",
   "", "", "A", "v", "factor", "number", "", "KW", "Electric power of three phase motor is given by the formula 1.73* VI cosφ where cosφ\
  is power factor of circuit.")
-Electric_power.calculate = () => v1 * v2 * v3 * 1.73 / 1000
+Electric_power.calculate = () => value6.value = (v1 * v2 * v3 * 1.73 / 1000).toFixed(2)
 calc.push(Electric_power)
 
 //FPR
 var FPR = new Calc("First Pass Retention", "Head Box Cy", "B/W cy", "", "", "", "", "%", "%", "", "", "", "%", "First pass retention\
  or FPR is calculated by formula FPR = (Head box Cy%- B/W cy% ) / H/B Cy%  multiplied by 100. FPR is an important parameter for\
  papermachine operation. Its value should remain steady and high enough  to avoid deposit and drainage problems. "  )
-FPR.calculate = function () { return (v1 - v2) * 100 / v1 }
+FPR.calculate = function () { value6.value = ((v1 - v2) * 100 / v1 ).toFixed(2)}
 calc.push(FPR);
 
+//Hardness of water
+const Hardness = new Calc('Hardness of Water',"Burette Reading", "Normality of EDTA", "Sample Volume", "", "", "",
+"ml", "N", "ml", "", "", "ppm",`Total hardness is defined as sum of calcium and magnesium concentrations expressed
+as CaCO<sub>3</sub> in mg/l  </br> <strong> Test method:</strong> </br> Take 100 ml sample in conical flask add 2-3 drops Erichrome
+black indicator and titrate with 0.5 N EDTA solution Total hardness is calculated as V*N*50000/Sample volume , where
+V is beurette reading,and N is normality of EDTA solution`)
+Hardness.calculate = ()=> value6.value = (v1*v2*50000/v3).toFixed(2)
+calc.push(Hardness)
 // Headbox pressure
 var Headbox_Pressure = new Calc("HeadBox Pressure", "Jet Velocity", "", "", "", "", "", "mpm", "", "", "", "", "m H2O",
   "Head box prsessure of gravity feed headbox or pressurised headbox is given by expression  H = v2/2g. Frictional losses\
  are not included in this formula."  )
-Headbox_Pressure.calculate = function () { return v1 * v1 / 70610 }
+Headbox_Pressure.calculate = function () { value6.value = (v1 * v1 / 70610).toFixed(2) }
 calc.push(Headbox_Pressure);
 
 
@@ -201,7 +223,7 @@ var Machine_Draw = new Calc("Machine Production Rate", "Machine Speed", "Machine
   "g/m2", "", "", "T/hr", "Paper machine thruput is calculated by the formula Production Rate = Machine Speed in mpm*gsm*Deckle*60/1000000.")
 
 
-Machine_Draw.calculate = function () { return v1 * v2 * v3 * 60 / 1000000 };
+Machine_Draw.calculate = function () { value6.value =( v1 * v2 * v3 * 60 / 1000000).toFixed(2) };
 calc.push(Machine_Draw);
 //Pump basics
 const Pump_basic = {
@@ -222,7 +244,7 @@ calc.push(Pump_basic)
 var Pump_output_power = new Calc("Pump output power", "Flow rate ", "Developed Head", "Density of fluid", "", "", "", "m^3/hr",
   "meter", "kg/m^3", "", "", "KW", "Pump output power is useful work done by pump and is given by the expression\
  Power = Flow rate X Head developed X Density of fluid X g.")
-Pump_output_power.calculate = function () { return v1 * v2 * v3 * 9.81 / 3600000 }
+Pump_output_power.calculate = function () { value6.value = (v1 * v2 * v3 * 9.81 / 3600000).toFixed(2) }
 calc.push(Pump_output_power);
 
 //Pump NPSH 
@@ -230,21 +252,41 @@ const NPSH = new Calc('Pump NPSHA', 'Atmospheric pressure (10.33)', ' Liquid lev
   , 'Vapour pressure of liquid', 'velocity head approx 2-2.5 m ', '', 'meter', 'meter', 'meter', 'meter', 'meter',
   'meter', `Pump Net positive suction pressure should be above vapoure pressure of liquid otherwise liquid will start
 boiling and will create cavitation problem in pump`)
-NPSH.calculate = () => v1 + v2 - v3 - v4 - v5
+NPSH.calculate = () => value6.value  = (v1 + v2 - v3 - v4 - v5).toFixed(2)
 calc.push(NPSH)
 //ream weight
-var Weight_Ream = new Calc("Weight of Ream (500 Sheets)", "Length", "Width", "GSm", "", "", "", "cm", "cm", "g/m^2", "", "", "kg",
+const Ream_Calculation = new Calc("Ream Calculation(500 Sheets)", "Length", "Width", "GSM", "", "", "Ream Weight", "cm", "cm", `g/m<sup>2</sup>`, "", "", "kg",
   "Forrmula for calculation of ream weight is Length x width x gsm *0.5  ")
-Weight_Ream.calculate = function () { return (v1 / 100) * (v2 / 100) * v3 * 0.5 }
-calc.push(Weight_Ream);
+Ream_Calculation.calculate = function () { }
+ Ream_Calculation.calculate1 = function() {   
+if(!value6.value) { value6.value = ((v1 / 100) * (v2 / 100) * v3 * 0.5).toFixed(2);}
+if(!value1.value) { value1.value = ((v6*20000) / (v2* v3)).toFixed(2);}
+if(!value2.value) { value2.value = ((v6*20000) / (v1* v3)).toFixed(2);}
+if(!value3.value) { value3.value = ((v6*20000) / (v2* v1)).toFixed(2);}
+console.log(v1,v3,v3,v6)
+}
+calc.push(Ream_Calculation);
 // v notch flow
 var V_notch_flow = new Calc("V Notch Flow Rate", "Head above notch apex", "Notch angle(90 or 60)", "", "", "", "", "mm", "Degrees", "",
   "", "", "m3/hr", "Triangular weir notches are sharp crested  V shaped thin plates. These plates are installed at the exit of channel\
  for measuring real time flow. The flow of water is directly proportionl to the head of water at weir."  )
-V_notch_flow.calculate = function () { if (v2 == "90") { return Math.pow(v1, 2.5) * 1.3466 * 3.6 } else { return Math.pow(v1, 2.5) * 0.7666 } }
+V_notch_flow.calculate = function () { if (v2 == "90") { value6.value = (Math.pow(v1, 2.5) * 1.3466 * 3.6).toFixed(2) }
+ else { value6.value = (Math.pow(v1, 2.5) * 0.7666).toFixed(2) } }
 calc.push(V_notch_flow);
-// breaking length
+// Reel Calculation
 
+const Reel_Calculation = new  Calc ("Reel Calculations","Reel Size",'Reel Weight','GSM','','','Length of paper',
+'cm','Kg',`g/m<sup>2 </sup>`,'','','meter', `Approx Reel weight can be calculated by formula  π/4(d${square.sup()}-di${square.sup()}*size of reel/Bulk of paper `)
+Reel_Calculation.calculate = function() {}
+Reel_Calculation.calculate1 = function() { 
+  if(!value6.value) { value6.value = (v2*100000/(v1*v3)).toFixed(2)}
+  if(!value1.value) { value1.value = (v2*100000/(v6*v3)).toFixed(2)}
+  if(!value2.value) { value2.value = (v6*v1*v3/100000).toFixed(2);}
+  if(!value3.value) { value3.value = (v2*100000/(v1*v6)).toFixed(2)}
+
+  console.log(v1,v2,v3,v6)
+}
+calc.push(Reel_Calculation)
 // pH of solution
 
 var pH_of_Solution = {
@@ -257,14 +299,14 @@ calc.push(pH_of_Solution);
 const kappa_number = new Calc("Kappa Number", "Amount of 0.1 N permegnate solution consumed", "weight of pulp", "", "", "",
   "", "ml", "g", "", "", "", "number", "Kappa number is volume (in ml) of 0.1 N potassium permagnate solution consumed by\
 1 g of pulp. ", "https://en.wikipedia.org/wiki/Kappa_number#:~:text=The%20Kappa%20number%20is%20a,pulping%20process%2C%20from%20the%20hemicelluloses.")
-kappa_number.calculate = function () { return v1 / v2 }
+kappa_number.calculate = function () { value6.value = (v1 / v2).toFixed(2) }
 calc.push(kappa_number)
 //viscosity of pulp
 const viscosity_pulp = new Calc("Viscosity Of Pulp", "Viscometer Constant", "effux time", "", "", "",
   "", "number", "sec", "", "", "", "cP", "Pulp solution viscosity gives an indication of  degree of polymerisation of cellulose.\
 </Br> </br>Therefore it gives indication of degradation of cellulose resulting from pulping and bleaching operations.")
 
-viscosity_pulp.calculate = function () { return v1 * v2 }
+viscosity_pulp.calculate = function () { value6.value = (v1 * v2).toFixed(2) }
 calc.push(viscosity_pulp)
 // Pressure drop in stock pipe
 const pressure_drop = new Calc("Pressure Drop in Pipes", "Flow Rate", "Pipe inside diameter",
@@ -272,27 +314,27 @@ const pressure_drop = new Calc("Pressure Drop in Pipes", "Flow Rate", "Pipe insi
   `kg/m${three.sup()}`, `N-s/m${square.sup()}`, `m`, `N/m${square.sup()}`
   , `Pressure drop in a pipe is given by the formula\
  P1-P2 = 128µLQ/πD${four.sup()}. The above formula is derived from Poiseuille equation.`)
-pressure_drop.calculate = function () { return (128 * v4 * v1 * v5) / (3.14 * v2 * v2 * v2 * v2) }
+pressure_drop.calculate = function () { value6.value = ((128 * v4 * v1 * v5) / (3.14 * v2 * v2 * v2 * v2)).toFixed(2) }
 calc.push(pressure_drop);
 //Nip load
 const Nipload = new Calc('Nip Load', 'Roll weight', 'Roll diameter', 'Pressure', 'Nip width', '', '', 'Kg', 'cm', 'kg/cm2', 'cm', '', 'kg/cm'
   , `Nip load is expressed as pressure per unit length ,if pressure is applied on top roll it is added to weight or if applied\
  to bottom roll it is substracted. It is calculated as Nip load = 2*pi/4*d ${square.sup()}*Pressure+- Roll weight`)
 
-Nipload.calculate = () => (2 * (3.14 / 4) * v2 ** 2 + v1) / v4
+Nipload.calculate = () => value6.value  = ((2 * (3.14 / 4) * v2 ** 2 + v1) / v4).toFixed(2)
 calc.push(Nipload)
 //pump power
 const Pump_Power = new Calc("Pump Power", "Flow Rate", "Total head", "efficiency of pump and motor", "", "", "",
   "meter cube/hr", "meters", "fraction", "", "", "HP", "Pump power depends on total head (developed+frictional),flow rate \
 and pump+motor efficiency.",)
-Pump_Power.calculate = () => (v1 * v2) / (75 * v3)
+Pump_Power.calculate = () =>  value6.value= ((v1 * v2) / (75 * v3)).toFixed(2)
 calc.push(Pump_Power)
 // Vacum pump capacity
 const vacuum_pump = new Calc("Vacuum Pump Capacity", "Leak Rate", "System Pressure", "", "", "", `m${three.sup()}`,
   "Torr liter/sec", "Torr", ",", "", "", "meter cube/hr", " Vaccum pump capacity is calculated my measuring leakage rate ie increase of pressure\
  after attaining vacuum level in certain time and expressed in units of Pressure.Vol/sec.</Br> So by multiplying Leakage with Vacuum level\
  required we can determine vaccum pump capacity in meter cube per hour. ", "https://www.ippta.co/Misc.Publication/DIY_Guidelines_for_Optimization_of_Wire_Vacuum.pdf")
-vacuum_pump.calculate = () => v1 * 3.6 / v2
+vacuum_pump.calculate = () =>  value6.value= (v1 * 3.6 / v2).toFixed(2)
 calc.push(vacuum_pump)
 //moment of inertia roll
 const moment_inertia = new Calc("Moment of Inertia of a roll", "Density of material", "Length of roll", "outside dia. of roll", "inside dia.of roll",
@@ -300,13 +342,13 @@ const moment_inertia = new Calc("Moment of Inertia of a roll", "Density of mater
  tendency to resist angular acceleration. It is equal to sum of product of mass of each particle  and square of its distance from\
  axis of roation.</Br> It determines how much torque is required for angular acceleration similar to how mass determines\
  how much force is required for linear acceleration.",)
-moment_inertia.calculate = () => 0.09817 * v1 * v2 * (Math.pow(v3, 4) - Math.pow(v4, 4))
+moment_inertia.calculate = () =>  value6.value = ( 0.09817 * v1 * v2 * (Math.pow(v3, 4) - Math.pow(v4, 4))).toFixed(2)
 calc.push(moment_inertia)
 //head box flow rate
 const Headbox_flow = new Calc("Headbox Flow Rate", "Jet Velocity", "Slice Opening", "Orifice cofficient", "", "", "",
   "mpm", "mm", "number", "", "", "L/min/m", "Head box Flow/unit width is equal to slice opening multiplied by jet  velocity and \
  coefficient of geometry of slice, for nozzle it is about 0.95 for low angle it is about 0.75.")
-Headbox_flow.calculate = () => v1 * v2 * v3
+Headbox_flow.calculate = () => value6.value =    (v1 * v2 * v3).toFixed(2)
 calc.push(Headbox_flow)
 
 // Residual chlorine
@@ -314,15 +356,14 @@ var R_chlorine = new Calc("Residual Chlorine", "Burette Reading", "Normality of 
   "", "ppm", "Residual chlorine is low amount of chlorine left in pulp  after washing of pulp.\
     </br>It is measured by titrating with a Sodium thiosulphate using starch iodine titration method until color changes.   \
     </br> </br>Formula for calculation  of residual chlorine = V*N* 35.5/Sample volume, where V is beurette reading and N is normality of sodium thiosulphate.")
-R_chlorine.calculate = function () { return v1 * v2 * 35.5 / v3 };
+R_chlorine.calculate = function () { value6.value = (v1 * v2 * 35.5 / v3).toFixed(2) };
 calc.push(R_chlorine);
-
 
 const Tearing_strength = new Calc("Tearing Factor", "Tearing Strength", "Basis Weight", "", "", "", "", "mN", "gram per square meter", "",
   "", "", `mN/g/m${square.sup()} `, "Tearing Strength of paper is resistance of paper to tearing force it is subjected to.\
  It is a basic physical property of paper and paperboard. It is measured in both machine  and cross directions.</br> \
  </br>Tear factor of paper is calculated as Tearing strength per unit basis weight." )
-Tearing_strength.calculate = () => v1 / v2;
+Tearing_strength.calculate = () => value6.value =   (v1 / v2).toFixed(2);
 calc.push(Tearing_strength);
 
 const Total_active_effective_alkali = new Calc("Total active and effective alkali", "Buerette Reading", "Normality of Hcl",
@@ -333,7 +374,7 @@ const Total_active_effective_alkali = new Calc("Total active and effective alkal
  = Beurette Reading x Normality of Hcl / Sample volume.  Titration is same for all but beurette reading is different for different\
  types of alkali. ", "https://en.wikipedia.org/wiki/White_liquor")
 
-Total_active_effective_alkali.calculate = () => v1 * v2 * 40 / v3;
+Total_active_effective_alkali.calculate = () => value6.value = (v1 * v2 * 40 / v3).toFixed(2);
 calc.push(Total_active_effective_alkali)
 
 const Relative_humadity = new Calc("Relative Humidity", "Dry Bulb Temperature", "Wet Bulb temperature", "", "", "", "",
@@ -342,7 +383,8 @@ const Relative_humadity = new Calc("Relative Humidity", "Dry Bulb Temperature", 
  is a hygroscopic material and absorbs moisture from atmosphere. Humidity is calculated by noting dry and wet bulb temperatures\
  and using psychrometric charts.</br> </br> It can be calculated as RH(%)= Ew-N(1+0.00115*Tw)*(Td-Tw)/*100/Ed  where Ew is 6.112*exp((17.502+Td)/240.97+Tw) and Ed is\
  6.112*exp((17.502+Td)/240.97+Tw) )), Td is dry bulb temperature and Tw is wet bulb temperature.")
-Relative_humadity.calculate = () => ((6.112 * Math.exp((17.502 * v2) / (240.97 + v2))) - 0.6687 * (1 + 0.00115 * v1) * (v1 - v2)) * 100 / (6.112 * Math.exp((17.502 * v1) / (240.97 + v1)))
+Relative_humadity.calculate = () => value6.value = 
+((6.112 * Math.exp((17.502 * v2) / (240.97 + v2))) - 0.6687 * (1 + 0.00115 * v1) * (v1 - v2)) * 100 / (6.112 * Math.exp((17.502 * v1) / (240.97 + v1)))
 
 calc.push(Relative_humadity);
 
@@ -371,17 +413,23 @@ const Porosity = {
  volume of air to pass through a  test specimen. The air pressure is generated by a gravity loaded cylinder that captures \
  an air volume within a chamber using a liquid seal. The pressurised volume of air is passed through the paper to atmosphere."}
 calc.push(Porosity)
-console.log(Relative_humadity.definition)
-console.log(NPSH.param1)
+
 const Tensile = new Calc("Tensile Index", "Tensile Strength", "Basis Weight", "", "", "", "", "N/m", "g/m2", "", "", "", "Nm/g",
   "Tensile strength is maximum stress to break a paper sheet. It is one of the most important physical properties of paper\
  and paperboard . Generally tensile strength of materials is expressed in terms of load per unit area but in case of paper\
  it is generally expressed as load per unit width of speciman. there are several types of tensile testers used in paper industry\
  but the basic principle of all is same.", "https://en.wikipedia.org/wiki/Ultimate_tensile_strength")
 
- Tensile.calculate = () => v / v2
+ Tensile.calculate = () =>  value6.value =(v / v2).toFixed(2)
 calc.push(Alkalanity,Acidity,Ash_retention,Alkali_Loss,BOD,Breaking_Length,brightness_whiteness_shade,Bursting_strength,change_in_crown,
-  critical_speed,Cobb,Conditioning)
+  critical_speed,Cobb,Conditioning,Tensile)
+ 
+ console.log(index)
+console.log(JSON.parse(localStorage.getItem('index')))
+function defaultView() {index = JSON.parse(localStorage.getItem('index'));
+let trem = document.getElementById("term")
+trem.value = calc[index].name
+console.log(calc[index].name)
 
-
- calc.push(Tensile)
+fillData()
+}
