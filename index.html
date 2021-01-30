@@ -12,7 +12,7 @@
 
   <title>PaperCalc</title>
 </head>
-<body>
+<body onload="defaultView()">
   <ul class=" sidenav " id="slide-out">
     <li > <div class="user-view">
 <div class="background" style="background-color: blanchedalmond;">  </div>
@@ -51,7 +51,7 @@
         <path
           d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
       </svg> </label>
-    <input typ e="text" id="term" name="form" onkeyup="hide()" onclick="showList();hideTaskbar();hideForm() "
+    <input type="text" id="term" name="form" onkeyup="hide()" onclick="showList();hideTaskbar();hideForm() "
       class="center-align " style=" height:30px;  font-size: 19px; " >
   </div>
   <div class=" container optionlist " style="overflow: auto; height: auto;width: auto;">
@@ -59,6 +59,7 @@
       <li class="collection-item" > Alkalinity</li>
       <li class="collection-item" > Acidity</li>
       <li class="collection-item" >Alkali loss </li>
+      <li class="collection-item" > Automatic Process Control</li>
       <li class="collection-item" > Brightness,Whiteness and Shade</li>
       <li class="collection-item" > BOD</li>
       <li class="collection-item" > Bursting Strength </li>
@@ -77,6 +78,7 @@
       <li class="collection-item" > Electric output power of motor </li>
       <li class="collection-item" > First Pass Retention </li>
       <li class="collection-item" > First Pass Ash Retention </li>
+      <li class="collection-item" > Hardness of Water </li>
       <li class="collection-item" > HeadBox Pressure</li>
       <li class="collection-item" > Headbox Flow Rate </li>
       <li class="collection-item" > Kappa Number</li>
@@ -91,6 +93,8 @@
       <li class="collection-item" > Pressure Drop in Pipes</li>
       <li class="collection-item" > Pump Power </li>
       <li class="collection-item" > pH of Solution</li>
+      <li class="collection-item" > Ream Calculation(500 Sheets) </li>
+      <li class="collection-item" > Reel Calculations </li>
       <li class="collection-item" > Residual Chlorine</li>
       <li class="collection-item" > Relative Humidity</li>
       <li class="collection-item" > Smoothness of Paper</li>
@@ -100,22 +104,21 @@
       <li class="collection-item" > Tensile Index </li>
       <li class="collection-item" > V Notch Flow Rate</li>
       <li class="collection-item" > Viscosity Of Pulp</li>
-      <li class="collection-item" > Vacuum Pump Capacity </li>
-      <li class="collection-item" > Weight of Ream (500 Sheets) </li>
+      <li class="collection-item" > Vacuum Pump Capacity </li>      
     </ul>
   </div>
-  <div class="  taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;font-weight: bold;font-size: 19px;
+  <div class="taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;font-weight: bold;font-size: 19px;
    "><div id="taskBarCalculate" onclick=" fillData();noCalculation(); " 
    style="border:ridge; border-radius: 4px; background-image: url('images/calculate.png');
    background-repeat: no-repeat; background-position:left ;"
-    class="waves-effect btn-flat black-text"> Calculate
+    class="waves-effect btn-small black-text"> Calculate
      </div>
     <div id="taskBarDescription"  style="border-radius: 4px; border: ridge;  background-image: url('images/description.png');background-repeat: no-repeat;
     background-position: left;"  
-     class="definition waves-effect btn-flat black-text" onclick="displayDefinition()">
+     class="definition waves-effect btn-small black-text" onclick="displayDefinition()">
       Description</div>
-    <div id="more" onclick="more(); "  style="border: ridge; border-radius: 4px; background-image: url('images/more.png');
-     background-repeat: no-repeat; background-position:left ;"   class="waves-effect btn-flat black-text">   More </div>
+    <button id="more" onclick="more(); "  style="border: ridge; border-radius: 4px; background-image: url('images/more.png');
+     background-repeat: no-repeat; background-position:left   ;"   class="waves-effect btn-flat black-text">   More </button>
   </div>
   <div class="container">
     <p id="definition" class="flow-text"> </p> </div>
@@ -178,12 +181,18 @@
         </div>
         <div class="col s3"> <input type="number" id="v6" class="values"  ondblclick="fixValue(this)"  ></div>
       </div>
-    </form>
+      <div id="calculatebtn" style="display: none;">Fill data in any three fields and then click <button  class="btn-small">calculate </button>   </div>
+
+         </form>
     <div class="footer"> footer</div>
   
-
+    
   <script>
+    // to start default opening section
+    
         //  To get clicked list item in search fieldext
+        document.getElementById("calculatebtn").style.display = "none"
+
         var ul = document.getElementById("list")
     var items = ul.getElementsByTagName("li");
         for ( let item of items) {
@@ -239,6 +248,7 @@ item.addEventListener("click" , fillData)
     var value4 = document.getElementById('v4')
     var value5 = document.getElementById('v5')
     var value6 = document.getElementById('v6')
+    var values = document.querySelectorAll('.values')
 
 
 
@@ -248,7 +258,9 @@ item.addEventListener("click" , fillData)
     // get index of object from calc array
     
     function fillData() {
-      term = document.getElementById("term").value;
+      document.getElementById("calculatebtn").style.display='none'
+
+            term = document.getElementById("term").value;
  for( let obj of calc) 
 if (obj.name == term) { index = calc.indexOf(obj)}
          
@@ -273,7 +285,8 @@ list.style.display = "none";
         param3.innerHTML = calc[index].param3;
         param4.innerHTML = calc[index].param4;
         param5.innerHTML = calc[index].param5;
-        param6.innerHTML = calc[index].name
+        if (calc[index].param6) {param6.innerHTML = calc[index].param6}
+        else { param6.innerHTML = calc[index].name }
         unit1.innerHTML = calc[index].unit1
         unit2.innerHTML = calc[index].unit2
         unit3.innerHTML = calc[index].unit3
@@ -290,6 +303,14 @@ list.style.display = "none";
       if (param3.innerHTML == "") { row3.style.display = "none" }
       if (param4.innerHTML == "") { row4.style.display = "none" }
       if (param5.innerHTML == "") { row5.style.display = "none" }
+      
+      if(term =="Ream Calculation(500 Sheets)"||term=="Reel Calculations")
+      {document.getElementById("calculatebtn").style.display='block'
+      console.log(true)}
+      
+      localStorage.setItem('index',JSON.stringify(index))
+      console.log(term)
+      console.log(term == "Ream Calculation(500 Sheets)")
     }
 
     function hideTaskbar() {
@@ -348,12 +369,10 @@ list.style.display = "none";
       v3 = Number(value3.value);
       v4 = Number(value4.value);
       v5 = Number(value5.value);
-      v6 = Number(value6.value);
-          
-             value6.value = calc[index].calculate().toFixed(2)
-        
-    }
-       
+      v6 = Number(value6.value);         
+
+  calc[index].calculate(); }          
+           
     function fixValue(val) {
       if (val.readOnly == true) { val.readOnly = false }
       else { val.readOnly = true }
@@ -362,14 +381,14 @@ list.style.display = "none";
       for ( let item of items) {
 item.addEventListener("click" ,function () {document.getElementById("term").value = this.innerText }) }
 
-      
-  var values = document.querySelectorAll('.values')
-for (let element of values) {element.addEventListener("change", function () {this.value = parseFloat(this.value).toFixed(2); }
- )}
+    
+  
 
 
+
+  
   </script>
-  <script src="papercalc.js"></script>
+  
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script> document.addEventListener('DOMContentLoaded', function () {
@@ -377,5 +396,6 @@ for (let element of values) {element.addEventListener("change", function () {thi
       var instances = M.Sidenav.init(elems);
     });
   </script>
+  <script src="papercalc.js"></script>
 </body>
 </html>
