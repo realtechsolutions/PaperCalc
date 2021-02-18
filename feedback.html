@@ -13,43 +13,51 @@
   <title>PaperCalc</title>
 </head>
 <body>
+  <ul class=" sidenav " id="slide-out">
+    <li > <div class="user-view">
+<div class="background" style="background-color: blanchedalmond;">  </div>
+<a href="#user"> <img class="circle" src="paperlogo.png" alt="image"></a>
+<a href=""> PaperCalc </a> </div>
+    </li>
+    
+    <li>  <a href="https://www.youtube.com/watch?v=YnK0YYGJH08"> <i> <img src="images/utube.png" alt=""  height="20px" width="20px" > 
+    </i> <span > YouTube </span> </a>  </li>
+    <li>  <a href="https://realsolns.blogspot.com/2021/01/papercalc-app.html"> <i class="material-icons"   > <img src="images/blog.png" alt=""  height="20px" width="20px"> </i>  Blog </a>  </li>
+    <li>  <a href="index.html"> <i> <img src="images/calculate.png" alt="" height="20px" width="20px"> </i>  PaperCalc </a>  </li>
+    <li>  <a href="about.html">  <i ><img src="images/info.png" alt="" height="20px" width="20px">    </i>  About </a>  </li>
+    <li> <a href="feedback.html"> <i> <img src="images/feedback.png" alt="" height="20px"  width="20px"   >   </i> Feedback </a> </li>
+        <li> <a href="disclaimer.html"> <i> <img src="images/error.png" alt="" height="20px"   width="20px" 
+      >    </i> Disclaimer </a> </li>
+   
+        </ul>
   <nav class="blue-grey darken-4">
     <div class="nav-wrapper">
-<div class="container">
-  <a href="#" class="brand-logo"> PaperCalc </a>
-  <a href="" class="sidenav-trigger hamberger" data-target ="slide-out"> &#9776;</a>
-  <ul class="  hide-on-med-and-down right "> 
-    <li> <a href="index.html"> PaperCalc  </a> </li>
-    <li> <a href="feedback.html"> Feedback  </a> </li>
-    <li> <a href="#"> Disclaimer </a> </li>
-    <li> <a href="#"> Support PaperCalc </a> </li>
-   </ul>
-  </div>
-    </div>
+      <a href="#" class="brand-logo" style="font-size: 1.9rem;"> PaperCalc </a>
+      <a href="" class="sidenav-trigger hamberger" data-target="slide-out"> &#9776;</a>
   </nav>
-  <ul class=" sidenav " id="slide-out"> 
-    <li> <a href="index.html"> PaperCalc  </a> </li>
-    <li> <a href="about.html"> About  </a> </li>
-    <li> <a href="Feedback.html"> Feedback  </a> </li>
-        <li> <a href="contributor.html"> Become a contributor </a> </li>
+  <ul class="  hide-on-med-and-down right ">
+    <li> <a href="index.html"> PaperCalc </a> </li>
+    <li> 
+      <a href="about.html">  </a> About  </li> 
+    <li> <a href="feedback.html"> Feedback </a> </li>
         <li> <a href="disclaimer.html"> Disclaimer </a> </li>
-      </ul>
+  </ul>
 
+  
    <div class="container">
-  <p class="flow-text"> Your feedback and suggestions are important to us,please send the same to realtechsolns@gmail.com or
-    send your feedback through the form given below.
+  <p class="flow-text"> <a href=""> Send email to realtechsolns@gmail.com </a> or send the form given below.
   </p>
    
-    <form action="https://formspree.io/f/xbjpaqdl" method="POST" >
+    <form action="" method="POST"  name="google-sheet">
   
       <label for="name" style="font-size: large;"> Name</label>
-      <input type="text" id="name" name="name" placeholder=" Name.." required>
+      <input type="text" id="name" name="Name" placeholder="Enter name " required style="border: ridge;border-radius: 4px;">
   
       <label for="contact" style="font-size:17px">Contact Number</label>
-      <input type="text" id="contact" name="contact no" placeholder="Contact Number.." required>
+      <input type="text" id="contact" name="Phone" placeholder="Enter Contact No" required style="border: ridge;border-radius: 4px;">
   
       <label for="email" style="font-size: 17px;">Email</label>
-      <input type="email" id="email" name="Email" placeholder="Email" required>
+      <input type="email" id="email" name="Email" placeholder="Enter Email" required style="border-radius: 4px;border: ridge;">
         
        
       <label for="comments" style="font-size: 17px;">Comments</label>
@@ -61,18 +69,18 @@
   
     </form>
   </div>
-  
+  <div class="adfooter">ads </div>
 
 
 
   <script>
-    const scriptURL = ''
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbynqV3nL5rWLpMzfPV51bYRW0LovknxcKkszlkkF0GYKCYiNPm_UjkJ/exec '
     const form = document.forms['google-sheet']
   
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+        .then(response => alert("Thanks for your feedback..! "))
         .catch(error => console.error('Error!', error.message))
     })
   </script>

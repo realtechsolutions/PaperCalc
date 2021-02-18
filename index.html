@@ -22,13 +22,11 @@
     
     <li>  <a href="https://www.youtube.com/watch?v=YnK0YYGJH08"> <i> <img src="images/utube.png" alt=""  height="20px" width="20px" > 
     </i> <span > YouTube </span> </a>  </li>
-    <li>  <a href="index.html"> <i class="material-icons"   > <img src="images/blog.png" alt=""  height="20px" width="20px"> </i>  Blog </a>  </li>
+    <li>  <a href="https://realsolns.blogspot.com/2021/01/papercalc-app.html"> <i class="material-icons"   > <img src="images/blog.png" alt=""  height="20px" width="20px"> </i>  Blog </a>  </li>
     <li>  <a href="index.html"> <i> <img src="images/calculate.png" alt="" height="20px" width="20px"> </i>  PaperCalc </a>  </li>
     <li>  <a href="about.html">  <i ><img src="images/info.png" alt="" height="20px" width="20px">    </i>  About </a>  </li>
-    <li> <a href="mailto:realtechsolns@gmail.com"> <i> <img src="images/mail.png" alt="" height="20px"  width="20px"   >   </i> Send Email </a> </li>
-    <li> <a href="feedback.html"> <i> <img src="images/share.png" alt="" height="20px" width="20px" >   </i> Share </a> </li> 
-    
-    <li> <a href="disclaimer.html"> <i> <img src="images/error.png" alt="" height="20px"   width="20px" 
+    <li> <a href="feedback.html"> <i> <img src="images/feedback.png" alt="" height="20px"  width="20px"   >   </i> Feedback </a> </li>
+        <li> <a href="disclaimer.html"> <i> <img src="images/error.png" alt="" height="20px"   width="20px" 
       >    </i> Disclaimer </a> </li>
    
         </ul>
@@ -68,6 +66,7 @@
       <li class="collection-item" > Cobb</li>
       <li class="collection-item" > Conditioning of Paper</li>
       <li class="collection-item" > Critical Speed of a roll </li>
+      <li class="collection-item" > DCS </li>
       <li class="collection-item" > Degree SR of Pulp </li>
       <li class="collection-item" > Defects in Paper</li>
       <li class="collection-item" > Dosing(Batch)</li>
@@ -85,6 +84,8 @@
       <li class="collection-item" > Nip Load</li>
       <li class="collection-item" > Machine Production Rate </li>
       <li class="collection-item" > Moment of Inertia of a roll </li>
+      <li class="collection-item" > PID Controller </li>
+      <li class="collection-item" > PLC </li>
       <li class="collection-item" > Pump Basics </li>
       <li class="collection-item" > Pump output power</li>
       <li class="collection-item" > Pump NPSHA</li>
@@ -93,11 +94,12 @@
       <li class="collection-item" > Pressure Drop in Pipes</li>
       <li class="collection-item" > Pump Power </li>
       <li class="collection-item" > pH of Solution</li>
-      <li class="collection-item" > Ream Calculation(500 Sheets) </li>
-      <li class="collection-item" > Reel Calculations </li>
+      <li class="collection-item"  > Ream Calculation(500 Sheets) </li>
+      <li class="collection-item"  > Reel Calculations </li>
       <li class="collection-item" > Residual Chlorine</li>
       <li class="collection-item" > Relative Humidity</li>
       <li class="collection-item" > Smoothness of Paper</li>
+      <li class="collection-item" > Steam Condensate System</li>
       <li class="collection-item" > Stiffness of Paper</li>
       <li class="collection-item" > Total active and effective alkali</li>
       <li class="collection-item" > Tearing Factor </li>
@@ -107,18 +109,18 @@
       <li class="collection-item" > Vacuum Pump Capacity </li>      
     </ul>
   </div>
-  <div class="taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;font-weight: bold;font-size: 19px;
+  <div class="taskbar" id="taskbar" style="margin-top: 5px; padding: 5px;font-weight:600;font-size: 19px;
    "><div id="taskBarCalculate" onclick=" fillData();noCalculation(); " 
    style="border:ridge; border-radius: 4px; background-image: url('images/calculate.png');
    background-repeat: no-repeat; background-position:left ;"
-    class="waves-effect btn-small black-text"> Calculate
+    class="waves-effect btn-flat black-text"> Calculate
      </div>
     <div id="taskBarDescription"  style="border-radius: 4px; border: ridge;  background-image: url('images/description.png');background-repeat: no-repeat;
     background-position: left;"  
-     class="definition waves-effect btn-small black-text" onclick="displayDefinition()">
+     class="definition waves-effect btn-flat black-text" onclick="displayDefinition()">
       Description</div>
-    <button id="more" onclick="more(); "  style="border: ridge; border-radius: 4px; background-image: url('images/more.png');
-     background-repeat: no-repeat; background-position:left   ;"   class="waves-effect btn-flat black-text">   More </button>
+    <div id="more" onclick="more(); "  style="border: ridge; border-radius: 4px; background-image: url('images/more.png');
+     background-repeat: no-repeat; background-position:left   ;"   class="waves-effect btn-flat black-text"><span class="span">   More </span> </div>
   </div>
   <div class="container">
     <p id="definition" class="flow-text"> </p> </div>
@@ -140,7 +142,8 @@
         <div class="col s3" id="u1">
         </div>
         <div class="col s3">
-          <input type="number" id="v1" class="values" oninput="calculate()" ondblclick="fixValue(this)" >
+          <input type="number" id="v1" class="values" oninput="calculate()" ondblclick="fixValue(this)"
+           >
         </div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row2">
@@ -148,7 +151,8 @@
         </div>
         <div class="col s3" id="u2">
         </div>
-        <div class="col s3"> <input type="number" id="v2" class="values" oninput="calculate()" ondblclick="fixValue(this)">
+        <div class="col s3"> <input type="number" id="v2" class="values" oninput="calculate()"
+           ondblclick="fixValue(this)" >
         </div>
       </div>
       <div class="row yellow lighten-5 valign-wrapper " id="row3">
@@ -156,14 +160,16 @@
         </div>
         <div class="col s3" id="u3">
         </div>
-        <div class="col s3"> <input type="number" id="v3" class="values"  oninput="calculate()" ondblclick="fixValue(this)" ></div>
+        <div class="col s3"> <input type="number" id="v3" class="values"  oninput="calculate()" 
+          ondblclick="fixValue(this)"  ></div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row4">
         <div class="col s6" id="p4">
         </div>
         <div class="col s3" id="u4">
         </div>
-        <div class="col s3"> <input type="number" id="v4" class="values" oninput="calculate()"  ondblclick="fixValue(this)">
+        <div class="col s3"> <input type="number" id="v4" class="values" oninput="calculate()" 
+           ondblclick="fixValue(this)">
         </div>
       </div>
       <div class="row yellow lighten-5 valign-wrapper " id="row5">
@@ -171,7 +177,8 @@
         </div>
         <div class="col s3" id="u5">
         </div>
-        <div class="col s3"> <input type="number" id="v5" class="values" oninput="calculate()"  ondblclick="fixValue(this)">
+        <div class="col s3"> <input type="number" id="v5" class="values" oninput="calculate()" 
+           ondblclick="fixValue(this)" >
         </div>
       </div>
       <div class="row  yellow lighten-5 valign-wrapper" id="row6">
@@ -181,12 +188,13 @@
         </div>
         <div class="col s3"> <input type="number" id="v6" class="values"  ondblclick="fixValue(this)"  ></div>
       </div>
-      <div id="calculatebtn" style="display: none;">Fill data in any three fields and then click <button  class="btn-small">calculate </button>   </div>
+      <div id="calculatebtn"  onclick="calc[index].calculate1()" > <span> * Fill any three values and click</span>
+        <btn class="btn-small calcbutton"> Calculate</btn> </div>
 
          </form>
     <div class="footer"> footer</div>
   
-    
+    <script src="papercalc.js"></script>
   <script>
     // to start default opening section
     
@@ -306,11 +314,10 @@ list.style.display = "none";
       
       if(term =="Ream Calculation(500 Sheets)"||term=="Reel Calculations")
       {document.getElementById("calculatebtn").style.display='block'
-      console.log(true)}
+      }
       
       localStorage.setItem('index',JSON.stringify(index))
-      console.log(term)
-      console.log(term == "Ream Calculation(500 Sheets)")
+            
     }
 
     function hideTaskbar() {
@@ -371,7 +378,8 @@ list.style.display = "none";
       v5 = Number(value5.value);
       v6 = Number(value6.value);         
 
-  calc[index].calculate(); }          
+  calc[index].calculate();
+ }          
            
     function fixValue(val) {
       if (val.readOnly == true) { val.readOnly = false }
@@ -379,14 +387,8 @@ list.style.display = "none";
       }
      
       for ( let item of items) {
-item.addEventListener("click" ,function () {document.getElementById("term").value = this.innerText }) }
+item.addEventListener("click" ,function () {document.getElementById("term").value = this.innerText }) } 
 
-    
-  
-
-
-
-  
   </script>
   
   <!--JavaScript at end of body for optimized loading-->
@@ -396,6 +398,6 @@ item.addEventListener("click" ,function () {document.getElementById("term").valu
       var instances = M.Sidenav.init(elems);
     });
   </script>
-  <script src="papercalc.js"></script>
+  
 </body>
 </html>
