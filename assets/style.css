@@ -1,0 +1,78 @@
+body {
+            /* Pico's default container has a max-width, which is great for desktop */
+            padding-top: 1rem;
+        }
+
+        /* Style for the list items, which are not a standard Pico component */
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .list-item:last-child {
+            border-bottom: none;
+            border-radius: 0 0 var(--pico-border-radius) var(--pico-border-radius);
+        }
+
+        .list-item .item-name {
+            margin-bottom: 0; /* Override default heading/paragraph margins */
+        }
+        
+        /* Custom icon styling */
+        .item-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-right: 16px;
+            border-radius: 4px;
+        }
+
+        .icon-calculate {
+             background-color: #43a047; /* A slightly nicer green */
+        }
+        
+        .icon-info {
+            background-color: #1e88e5; /* A slightly nicer blue */
+        }
+
+
+         .my-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      .my-tab {
+        background: var(--pico-background-color, #f8f9fa);
+        color: var(--pico-primary, #0d6efd);
+        border: none;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding: 0.75em 1.5em;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        outline: none;
+      }
+      .my-tab:not(.active):hover {
+        background: var(--pico-muted-color, #e9ecef);
+        color: var(--pico-primary-hover, #0a58ca);
+      }
+      .my-tab.active {
+        background: var(--pico-primary, #0d6efd);
+        color: #fff;
+        font-weight: bold;
+      }
+      .tab-content {
+        border: 1px solid var(--pico-border-color, #e0e0e0);
+        border-radius: 0 0 0.5rem 0.5rem;
+        padding: 2em 1.5em;
+        background: var(--pico-background-color, #fff);
+        display: none;
+        margin-bottom: 2em;
+      }
+      .tab-content.active {
+        display: block;
+      }

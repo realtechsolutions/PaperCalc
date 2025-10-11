@@ -1,0 +1,272 @@
+ body {
+      padding: 0.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    h3.title{
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 0.25rem;
+      }
+      
+      .container {
+        padding: 0.5rem;
+      }
+      
+      .outlined-field {
+        margin: 0.5rem 0;
+      }
+      
+      .outlined-field fieldset {
+        border-width: 1.5px;
+      }
+      
+      .outlined-field input {
+        padding: 0.5rem 0.4rem;
+        font-size: 0.9rem;
+      }
+      
+      .outlined-field .unit-suffix {
+        padding: 0.5rem 0.4rem;
+        min-width: 45px;
+        font-size: 0.8rem;
+      }
+      
+      .outlined-field legend {
+        font-size: 0.65rem;
+        padding: 0 0.3rem;
+      }
+      
+      .outlined-field .placeholder-label {
+        font-size: 0.9rem;
+        left: 0.5rem;
+      }
+      
+      .result-field {
+        margin: 0.75rem 0 0.25rem;
+        padding: 0.5rem;
+      }
+      
+      .result-field input {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+      }
+      
+      .result-field .unit-suffix {
+        font-size: 0.85rem;
+      }
+      
+      .result-label {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+      }
+      
+      .tabs {
+        margin-bottom: 0.5rem;
+        border-bottom-width: 1px;
+      }
+      
+      .tab-button {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Desktop */
+    @media (min-width: 769px) {
+      body {
+        padding: 1.5rem;
+      }
+    }
+
+    .outlined-field {
+      position: relative;
+      margin: 1.5rem 0;
+    }
+
+    .outlined-field fieldset {
+      border: 2px solid #6c757d;
+      border-radius: var(--border-radius);
+      padding: 0;
+      margin: 0;
+      min-width: 0;
+      transition: border-color var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .outlined-field:focus-within fieldset {
+      border-color: var(--primary-focus);
+    }
+
+    .outlined-field fieldset:hover {
+      border-color: #495057;
+    }
+
+    .outlined-field legend {
+      padding: 0 0.5rem;
+      margin-left: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      transition: all var(--transition);
+      visibility: hidden;
+      max-width: 0.01px;
+      white-space: nowrap;
+    }
+
+    .outlined-field:focus-within legend,
+    .outlined-field.has-content legend {
+      visibility: visible;
+      max-width: 100%;
+    }
+
+    .outlined-field:focus-within legend {
+      color: var(--primary);
+    }
+
+    .outlined-field input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 1rem 0.75rem;
+      color: var(--form-element-color);
+      font-size: 1rem;
+      outline: none;
+      box-shadow: none !important;
+    }
+
+    .outlined-field .unit-suffix {
+      padding: 1rem 0.75rem;
+      color: var(--muted-color);
+      font-size: 0.9rem;
+      background: var(--form-element-background-color);
+      border-left: 1px solid #6c757d;
+      white-space: nowrap;
+      user-select: none;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .outlined-field .placeholder-label {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted-color);
+      pointer-events: none;
+      transition: all var(--transition);
+      font-size: 1rem;
+      opacity: 1;
+    }
+
+    .outlined-field:focus-within .placeholder-label,
+    .outlined-field.has-content .placeholder-label {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Helper text */
+    .helper-text {
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      margin-top: 0.25rem;
+      margin-left: 0.75rem;
+    }
+
+    /* Result box */
+    .result-field {
+      margin: 2rem 0;
+      padding: 1rem;
+      background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0.05) 100%);
+      border-radius: var(--border-radius);
+    }
+
+    .result-field fieldset {
+      border-color: var(--primary);
+      border-width: 3px;
+      background: var(--background-color);
+    }
+
+    .result-field input {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: not-allowed;
+      text-align: center;
+    }
+
+    .result-field .unit-suffix {
+      background: linear-gradient(135deg, var(--primary-focus) 0%, var(--primary) 100%);
+      color: white;
+      font-weight: bold;
+      border-left-color: var(--primary);
+      font-size: 1rem;
+    }
+
+    .result-field legend {
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    .result-field .placeholder-label {
+      display: none;
+    }
+
+    .result-label {
+      text-align: center;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Tab Styles */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--form-element-border-color);
+    }
+
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      color: var(--muted-color);
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: all var(--transition);
+    }
+
+    .tab-button:hover {
+      color: var(--primary);
+      background: var(--form-element-background-color);
+    }
+
+    .tab-button.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .calculate-btn {
+      width: 100%;
+      margin-top: 1rem;
+    }

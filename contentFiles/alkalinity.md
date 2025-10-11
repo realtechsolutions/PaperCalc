@@ -1,0 +1,25 @@
+Alkalinity is the capacity of water to resist changes in pH that would make water more acidic.  
+It is measured by titrating a sample with an acid until the pH changes abruptly.  
+Alkalinity is expressed as phenolphthalein alkalinity or total alkalinity.   _Phenolphthalein alkalinity_ measures the hydroxides and half of the carbonates at pH 8.3.   Phenolphthalein indicator is used in this titration.   
+_Total alkalinity_ measures all carbonate, bicarbonate, and hydroxide alkalinity at pH 4.5. Methyl Orange indicator is used in this titration.
+
+### Test Method:
+
+First, fill a burette with 0.1N HCl, then take about 50 ml of the sample in a conical flask and add a few drops of phenolphthalein indicator.  
+The color of the solution turns pink. Now titrate it with 0.1 N HCl by adding HCl drop by drop until the pink color disappears.  
+Note the burette reading and calculate alkalinity according to the formula given below.  
+The formula for the calculation of alkalinity is:
+
+$$
+Alkalinity = \frac {A \times N \times 50000} {Sample Volume}
+$$
+
+where \( A \) is the burette reading and \( N \) is the normality of the acid.
+
+<figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Titolazione.gif" />
+  <figcaption style="font-size: 13px">Acid Base Titration Source: Wikipedia</figcaption>
+</figure>
+
+#### References
+[Wikipedia](https://en.wikipedia.org/wiki/Alkalinity)

@@ -1,0 +1,1 @@
+Drying Rate is defined as kg water removed per hour per unit surface area.

@@ -1,0 +1,1 @@
+Pump power depends on total head (developed+frictional),flow rate and pump+motor efficiency.

@@ -1,0 +1,132 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parameter Calculator</title>
+   <link rel="stylesheet" href="../assets/calc.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css">
+   
+</head>
+<body>
+  <main class="container">
+    <!-- Tab Navigation -->
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="calculate">Calculate</button>
+      <button class="tab-button" data-tab="description">Description</button>
+    </nav>
+
+    <!-- Calculate Tab Content -->
+    <div id="calculate" class="tab-content active">
+      <div class="outlined-field">
+        <fieldset>
+          <legend>{{page.param1}}</legend>
+          <input type="number" id="param1" step="any" />
+          <span class="placeholder-label">{{page.param1}}</span>
+          <span class="unit-suffix">{{page.unit1}}</span>
+        </fieldset>
+      </div>
+
+      <div class="outlined-field">
+        <fieldset>
+          <legend>{{page.param2}}</legend>
+          <input type="number" id="param2" step="any" />
+          <span class="placeholder-label">{{page.param2}}</span>
+          <span class="unit-suffix">{page.unit1}</span>
+        </fieldset>
+      </div>
+
+      <div class="outlined-field">
+        <fieldset>
+          <legend>Parameter 3</legend>
+          <input type="number" id="param3" step="any" />
+          <span class="placeholder-label">Parameter 3</span>
+          <span class="unit-suffix">s</span>
+        </fieldset>
+      </div>
+
+      <div class="outlined-field">
+        <fieldset>
+          <legend>Parameter 4</legend>
+          <input type="number" id="param4" step="any" />
+          <span class="placeholder-label">Parameter 4</span>
+          <span class="unit-suffix">°C</span>
+        </fieldset>
+      </div>    
+
+      <div class="result-label">Result</div>
+      
+      <div class="outlined-field result-field has-content">
+        <fieldset>
+          <legend>Result</legend>
+          <input type="text" id="result" readonly value="0.00" />
+          <span class="unit-suffix">units</span>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Description Tab Content -->
+    <div id="description" class="tab-content">
+     {{content}}
+    </div>
+  </main>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        document.getElementById(targetTab).classList.add('active');
+      });
+    });
+
+    // Handle input state for floating labels and auto-calculate
+    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');
+    
+    inputs.forEach(input => {
+      // Check on input
+      input.addEventListener('input', () => {
+        if (input.value) {
+          input.closest('.outlined-field').classList.add('has-content');
+        } else {
+          input.closest('.outlined-field').classList.remove('has-content');
+        }
+        
+        // Auto-calculate on every input change
+        calculate();
+      });
+      
+      // Check on page load
+      if (input.value) {
+        input.closest('.outlined-field').classList.add('has-content');
+      }
+    });
+
+    // Calculate function (example: simple sum)
+    function calculate() {
+      const param1 = parseFloat(document.getElementById('param1').value) || 0;
+      const param2 = parseFloat(document.getElementById('param2').value) || 0;
+      const param3 = parseFloat(document.getElementById('param3').value) || 0;
+      const param4 = parseFloat(document.getElementById('param4').value) || 0;
+      const param5 = parseFloat(document.getElementById('param5').value) || 0;
+      
+      // Example calculation: sum of all parameters
+      // Replace this with your actual formula
+      const result = param1 + param2 + param3 + param4 + param5;
+      
+      document.getElementById('result').value = result.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

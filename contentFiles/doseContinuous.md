@@ -1,0 +1,1 @@
+Dosing calculation is same as in batch,total volume becomes total flow rate and ingredient amount becomes ingredient flow.
