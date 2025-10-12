@@ -5,11 +5,10 @@
 layout: home
 ---
 
- <main class="container">
+ <main class="container">    
         
-        <h1 style="text-align: center;">Paper Calc</h1>
 
-        <input type="search" id="search-box" name="search" placeholder="Search for a topic...">
+        <input type="search" id="search-box" name="search" placeholder="Search for a topic or calculation">
         
         <!-- 'article' is a good semantic tag for a self-contained block of content -->
         <article id="item-list">
@@ -47,9 +46,13 @@ layout: home
                     // window.location.href = `${page}?fileName=${item.fileName}`;
                 });
 
-                const icon = document.createElement('div');
-                const iconClass = item.type === 'calculate' ? 'icon-calculate' : 'icon-info';
-                icon.className = `item-icon ${iconClass}`;
+                const icon = document.createElement('img');
+               icon.className = 'item-icon';
+              icon.alt = item.type === 'calculate' ? 'Calculate' : 'Info';
+                 icon.src = item.type === 'calculate'
+             ? 'images/calculate.png'
+             : 'images/info.png';
+
                 
                 const nameParagraph = document.createElement('p');
                 nameParagraph.className = 'item-name';
