@@ -1,6 +1,8 @@
 ---
+layout : description.html
+title : Activated sludge process
 ---
-### Activated sludge process
+
 For waste water treatment paper mills generally use activated sludge process.
 In this process microorganisms use organic contaminants of waste water as their food.
 
