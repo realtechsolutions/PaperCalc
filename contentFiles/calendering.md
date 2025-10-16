@@ -1,3 +1,7 @@
+---
+layout : description
+title : Calendering of paper
+---
 Calendering is the last step of the paper manufacturing process that affects paper and board properties.<br>
 
 The main purpose of calendering is to improve the surface properties of paper and to control the caliper profile.<br>

@@ -1,3 +1,7 @@
+---
+title: Vacuum systems
+layout: description
+---
 The vacuum system is a critical component of the papermaking process, primarily used for dewatering, sheet formation, and controlling water removal in various sections of the paper machine. 
 It operates by creating a pressure differential that draws water out of the pulp slurry, aiding in forming a strong and uniform sheet while maintaining efficient machine operation.
 

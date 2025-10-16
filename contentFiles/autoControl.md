@@ -1,3 +1,9 @@
+---
+layout : description
+title : Automatic process control
+---
+
+
 To achieve a certain level of economy,safety and consistency  of operations almost all continuous process plants use some kind of automatic process control method.
 
 
@@ -7,7 +13,7 @@ To achieve a certain level of economy,safety and consistency  of operations almo
 Its application ranges from temperature,level control of single process to control of entire plant with thousands of control loop.
 
 
-The fundamental block of any control system is control loop which controls one process.</br>
+The fundamental block of any control system is control loop which controls one process.<br>
 Large process plants can have thousands of control loop independent or interacting with other loops.
 
 

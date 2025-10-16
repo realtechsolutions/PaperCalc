@@ -1,4 +1,8 @@
-### **Total Productive Maintenance (TPM)**
+---
+title: Total Productive Maintenance (TPM)
+layout: description
+---
+
 
 **Total Productive Maintenance (TPM)** is a proactive maintenance strategy aimed at maximizing the productivity and reliability of equipment by involving employees at all levels in maintaining machines and processes. TPM emphasizes a company-wide approach to improving equipment performance, reducing downtime, and enhancing overall efficiency.
 

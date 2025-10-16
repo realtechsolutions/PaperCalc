@@ -1,3 +1,8 @@
+---
+title: Doctor Blades
+layout: description
+---
+
 **Doctor blades** are critical components in the papermaking process. They are used in various sections of the paper machine to remove water, contaminants, or excess material from rolls and cylinders, ensuring smooth operation and high-quality paper production.
 
 ---
@@ -89,6 +94,4 @@ Doctor blades are thin, flexible blades made of materials like **steel, plastic,
 
 3. **Blade Vibration**:
     - **Solution**: Ensure proper mounting and tensioning to minimize chatter.
-
----
 

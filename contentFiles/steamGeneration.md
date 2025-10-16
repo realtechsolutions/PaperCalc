@@ -1,3 +1,7 @@
+---
+title: Steam generation
+layout: description
+---
 For steam and power generation most of the mills uses Cogeneration plants.  
 
 

@@ -1,3 +1,7 @@
+---
+title: Suction Roll
+layout: description
+---
 Suction rolls are an essential component in the **papermaking process**, primarily used in the **press and drying sections** of a paper machine. Their purpose is to remove water from the paper sheet and support smooth sheet transfer through the machine.
 
 ### Structure of a Suction Roll

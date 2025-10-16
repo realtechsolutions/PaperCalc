@@ -1,4 +1,7 @@
-
+---
+layout : Blade coating
+title : Automatic process control
+---
 
 ### **What Is Blade Coating?**
 Blade coating involves the application of a liquid coating mixture (typically pigments, binders, and additives) onto the moving web of paper. A **doctor blade** precisely meters the amount of coating by scraping off the excess material, leaving a consistent layer of coating on the paper surface.

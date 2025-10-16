@@ -1,4 +1,7 @@
-
+---
+layout : description
+title : Centricleaner
+---
 A centricleaner is a conical or partly cylindrical device with no moving part,designed to remove grit and heavier particles from stock by centrifugal
 action of rotating fluid.  
 Stock furnish is fed into the hydro cyclone tangentially under a certain pressure.

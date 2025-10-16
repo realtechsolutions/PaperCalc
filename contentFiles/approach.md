@@ -1,3 +1,7 @@
+---
+layout : description
+title : Approach flow system
+---
 The stock flow system from Fan pump to headbox slice is called approach flow system.
 
 It refers specifically to the fan pump loop where pulp mixture is measured, diluted, mixed with necessary additives, and finally screened and cleaned

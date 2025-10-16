@@ -1,3 +1,8 @@
+---
+title: Smart sensors
+layout: description
+---
+
 **Smart sensors** in papermaking are advanced devices that monitor various parameters of the paper machine and its components in real time. By leveraging technologies like **IoT (Internet of Things), wireless connectivity, and advanced analytics**, these sensors enable predictive maintenance, process optimization, and improved product quality.
 
 ---

@@ -1,3 +1,8 @@
+---
+title: Dyes
+layout: description
+---
+
 Following types of dyes are used in papermaking.  
 
 1. Direct Dyes: 

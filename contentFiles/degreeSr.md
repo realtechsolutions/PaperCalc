@@ -1,3 +1,8 @@
+---
+title: Degree SR
+layout: description
+---
+
 The Schopper degree test is designed to provide a measure of the rate at which a dilute suspension of pulp may be dewatered.  
 
 One <sup>0</sup>SR corresponds to 10 ml of water. 

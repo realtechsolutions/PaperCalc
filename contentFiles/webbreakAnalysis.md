@@ -1,4 +1,9 @@
-### **Web Break Analysis in Papermaking**
+---
+title: Web Break Analysis in Papermaking
+layout: description
+---
+
+
 
 **Web break analysis** is the systematic investigation of causes behind web breaks that occur during the papermaking process. A **web break** is when the continuous sheet of paper being produced tears or ruptures on the paper machine, causing production downtime, material waste, and operational inefficiencies.
 

@@ -1,4 +1,7 @@
-
+---
+title: Yankee roll
+layout: description
+---
 
 It is a type of fourdnier machine which employs a single dryer of very large circumference with highly polished surface. 
 

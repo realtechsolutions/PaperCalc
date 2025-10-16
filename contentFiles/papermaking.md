@@ -1,3 +1,8 @@
+---
+title: Papermaking process
+layout: description
+---
+
 Paper is a thin sheet usually manufactured from cellulose pulp derived from wood and other lignocellulosic materials.  
 
 It is believed that paper originated in China in the 2nd century.

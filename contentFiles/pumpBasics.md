@@ -1,3 +1,8 @@
+
+---
+title: Pump basics
+layout: description
+---
 A pump can be defined as a machine that increases the total energy of a liquid this means that pump transfers mechanical energy to a fluid  and
 converts it to pressure energy of fluid.  
 Generally pumps are of two types Centrifugal pump and positive displacement pumps.  

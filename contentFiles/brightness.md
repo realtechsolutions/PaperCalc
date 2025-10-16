@@ -1,3 +1,7 @@
+---
+layout : description
+title : Brightness,whiteness and shade
+---
 Brightness is a measurement of  reflectance of blue light  of wavelength 457nm.Tappi standard and ISO standards are commonly used for brightness
 measurement.  
 A 95  bright paper reflects more light than an 85 bright paper, therefore appearing brighter.

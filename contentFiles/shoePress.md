@@ -1,3 +1,8 @@
+---
+title: Shoe press
+layout: description
+---
+
 The nip of a shoe press consists of a stationary shoe which is loaded against a press roll.   
 A stationary concave shoe press replaces the
 conventional bottom roll.  

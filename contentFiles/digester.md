@@ -1,3 +1,8 @@
+---
+title: Digester
+layout: description
+---
+
 Most of the old pulp mills uses batch digesters for pulp production.
 Recent Mills use continuous digesters for pulp production.
 

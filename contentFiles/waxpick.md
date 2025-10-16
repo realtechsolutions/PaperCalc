@@ -1,3 +1,8 @@
+---
+title: Wax pick
+layout: description
+---
+
 The Dennison Wax Pick test is used on paper and board to measure surface strength, or to measure how well the fibers are attached at the surface.        
 
 The wax pick number is the highest hardness wax that does not pick fiber from the surface.

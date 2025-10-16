@@ -1,3 +1,17 @@
+---
+layout : calc4
+title : Chemical oxygen demand
+param1 : Volume of FAS used for blank
+param2 : Volune of FAS used for sample 
+param3 : molaraity of FAS
+param4 : Sample volume
+unit1 : ml
+unit2 : ml
+unit3 : M
+unit4: ml
+resultUnit : mg/l
+---
+
 Chemical oxygen demand(COD) is amount of oxygen consumed in complete chemical oxidation of matter present in waste water.  
 
 It indicates the content of slowly degradable organic matter present.
@@ -23,3 +37,41 @@ M = molarity of FAS
 
 ### References
 [Wikipedia](https://en.wikipedia.org/wiki/Chemical_oxygen_demand)
+
+<script>  
+    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    inputs.forEach(input => {
+      // Check on input
+      input.addEventListener('input', () => {
+        if (input.value) {
+          input.closest('.outlined-field').classList.add('has-content');
+        } else {
+          input.closest('.outlined-field').classList.remove('has-content');
+        }        
+        // Auto-calculate on every input change
+        calculate();
+      });      
+      // Check on page load
+      if (input.value) {
+        input.closest('.outlined-field').classList.add('has-content');
+      }
+    });
+
+    // Calculate function 
+    function calculate() {
+      const fasBlank = parseFloat(document.getElementById('param1').value) || 0;
+      const fasSample = parseFloat(document.getElementById('param2').value) || 0;
+      const molarity = parseFloat(document.getElementById('param3').value) || 0;
+      const sampleVolume= parseFloat(document.getElementById('param4').value) || 0;
+      //const param4 = parseFloat(document.getElementById('param4').value) || 0;
+      //const param5 = parseFloat(document.getElementById('param5').value) || 0;
+      
+      // Example calculation: sum of all parameters
+      // Replace this with your actual formula
+      const result = ((fasBlank -  fasSample)*molarity *80000)/sampleVolume
+      
+      document.getElementById('result').value = result.toFixed(2);
+    }
+
+
+</script>

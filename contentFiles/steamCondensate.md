@@ -1,3 +1,7 @@
+---
+title: Steam and condensate system
+layout: description
+---
 About 1.1-1.4 kg water per kg of paper is removed in the dryer section of Paper machine.  
 
 Steam consumption ranges from 1.5-2.5 kg steam/kg paper.  

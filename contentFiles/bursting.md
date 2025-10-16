@@ -1,3 +1,8 @@
+---
+layout : description
+title : Bursting strength
+---
+
 Bursting strength is measured as the maximum hydrostatic pressure required to rupture the sample by constantly increasing the pressure applied through a rubber diaphgram on 30.5 mm diameter sample.  
 
 Bursting strength tells how much pressure a paper can tolerate before rupture.  

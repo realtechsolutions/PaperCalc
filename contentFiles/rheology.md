@@ -1,4 +1,7 @@
-
+---
+title: Rheology and viscosity
+layout: description
+---
 Viscosity  is a quantity which describes a fluid's resistance to flow.   
 Fluids resist the relative motion of immersed objects through them,and the motion of layers within them. 
 

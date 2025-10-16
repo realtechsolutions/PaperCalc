@@ -45,15 +45,14 @@ where A is burette reading and N is normality of Alkali solution.
         }        
         // Auto-calculate on every input change
         calculate();
-      });
-      
+      });      
       // Check on page load
       if (input.value) {
         input.closest('.outlined-field').classList.add('has-content');
       }
     });
 
-    // Calculate function (example: simple sum)
+    // Calculate function 
     function calculate() {
       const beuretteReading = parseFloat(document.getElementById('param1').value) || 0;
       const normality = parseFloat(document.getElementById('param2').value) || 0;

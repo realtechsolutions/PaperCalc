@@ -1,3 +1,8 @@
+---
+title: Dissolved oxygen
+layout: description
+---
+
 Dissolved Oxygen of Water is ml of Sodium thiosulphate of 0.025N consumed for titrating 200 ml of sample.  
 
 The test is known as Winkler  test method.

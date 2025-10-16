@@ -1,3 +1,8 @@
+---
+title: PID controller
+layout: description
+---
+
 The most basic control system is on/off control but this control system is not very useful because of its oscillatory nature.
 
 To control the output to a desired set point three control actions are necessary,these are proportional,integral and derivative.  

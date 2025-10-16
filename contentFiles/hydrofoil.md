@@ -1,3 +1,8 @@
+---
+title: Hydrofoils 
+layout: description
+---
+
 Hydrofoils are  used in forming section of paper machine to help drainage. 
 
 It is also called dewatering element.  

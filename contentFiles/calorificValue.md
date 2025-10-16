@@ -1,3 +1,8 @@
+---
+layout: description
+title : Calorific value of coal
+---
+
 Coal is mostly used in power plants for electricity generation.  
 Energy released on burning of coal is known as calorific value.  
 It is of two types Gross calorific value(GCV) and net calorific value(NCV).  

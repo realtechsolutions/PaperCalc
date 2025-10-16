@@ -1,3 +1,7 @@
+---
+title: soda recovery
+layout: description
+---
 The kraft process is the dominant pulping process in the  paper industry because it can handle variety of raw materials and about 95% of chemicals
 can be recovered with the generation of steam.
 

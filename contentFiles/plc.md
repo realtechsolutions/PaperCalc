@@ -1,3 +1,8 @@
+---
+title: PLC
+layout: description
+---
+
 PLC is short form of Programmable Logic Controller.  
 
 A PLC is a computer specially designed to operate reliably under harsh industrial environments.  

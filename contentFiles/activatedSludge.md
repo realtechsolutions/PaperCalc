@@ -1,5 +1,5 @@
 ---
-layout : description.html
+layout : description
 title : Activated sludge process
 ---
 

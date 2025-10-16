@@ -1,3 +1,8 @@
+---
+title: Paper sizes
+layout: description
+---
+
 Table of paper sizes from 4A0 to A10 Size
 
 

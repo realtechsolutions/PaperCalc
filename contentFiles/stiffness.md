@@ -1,3 +1,8 @@
+---
+title: Stiffness of paper
+layout: description
+---
+
 Stiffness is a measure of flexural rigidity of paper.  
 
 It is bending moment(g-cm or mNm) required to deflect the free end of a 1.5 inch wide vertically clamped sample 150 from its center line when

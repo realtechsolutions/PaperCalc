@@ -1,3 +1,8 @@
+---
+title: Wet-end chemistry
+layout: description
+---
+
 Wet-end chemistry has a very important role in papermaking process. It is the study of the slurry of fibres ,fillers and additives.
 
 The surface of cellulosic fibers,fillers and additives is negatively charged i.e. anionic and the level of charge is different in different materials.

@@ -1,4 +1,7 @@
-
+---
+title: Twin wire machine
+layout: description
+---
 Twin-wire formers,also known as two-sided formers, are advanced papermaking components used to improve the sheet formation
 process. 
 

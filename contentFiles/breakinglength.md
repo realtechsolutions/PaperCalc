@@ -1,3 +1,8 @@
+---
+layout : description
+title : Breaking length
+---
+
 Breaking length is calculated length of paper beyond which if paper is suspended at one end it will break of its own weight.  
 
 Breaking length is calculated from Tensile strength by formula  BL = 102000(T/R) where T is tensile strength in kN/m and R is paper gsm.  

@@ -1,3 +1,8 @@
+---
+title: Smoothness of paper
+layout: description
+---
+
 Smoothness is measure of ml of air escaping per minute through the hills and valleys of surface of  paper.
 
 Higher the value,rougher is the surface. This is mostly used for uncoated paper.

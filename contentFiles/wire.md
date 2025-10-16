@@ -1,3 +1,7 @@
+---
+title: Wire
+layout: description
+---
 The moving screen at the wet end of paper machine where paper is formed is called wire. 
 It is a woven synthetic fabric and plays an important role in paper quality.
 

@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,25 +32,25 @@
           <legend>{{page.param2}}</legend>
           <input type="number" id="param2" step="any" />
           <span class="placeholder-label">{{page.param2}}</span>
-          <span class="unit-suffix">{page.unit1}</span>
+          <span class="unit-suffix">{{page.unit2}}</span>
         </fieldset>
       </div>
 
       <div class="outlined-field">
         <fieldset>
-          <legend>Parameter 3</legend>
+          <legend>{{page.param3}}</legend>
           <input type="number" id="param3" step="any" />
-          <span class="placeholder-label">Parameter 3</span>
-          <span class="unit-suffix">s</span>
+          <span class="placeholder-label">{{page.param3}}</span>
+          <span class="unit-suffix">{{page.unit3}}</span>
         </fieldset>
       </div>
 
       <div class="outlined-field">
         <fieldset>
-          <legend>Parameter 4</legend>
+          <legend>{{page.param4}}</legend>
           <input type="number" id="param4" step="any" />
-          <span class="placeholder-label">Parameter 4</span>
-          <span class="unit-suffix">°C</span>
+          <span class="placeholder-label">{{page.param4}}</span>
+          <span class="unit-suffix">{{page.unit4}}</span>
         </fieldset>
       </div>    
 
@@ -60,7 +60,7 @@
         <fieldset>
           <legend>Result</legend>
           <input type="text" id="result" readonly value="0.00" />
-          <span class="unit-suffix">units</span>
+          <span class="unit-suffix">{{page.resultUnit}}</span>
         </fieldset>
       </div>
     </div>
@@ -91,41 +91,7 @@
     });
 
     // Handle input state for floating labels and auto-calculate
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');
-    
-    inputs.forEach(input => {
-      // Check on input
-      input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }
-        
-        // Auto-calculate on every input change
-        calculate();
-      });
-      
-      // Check on page load
-      if (input.value) {
-        input.closest('.outlined-field').classList.add('has-content');
-      }
-    });
-
-    // Calculate function (example: simple sum)
-    function calculate() {
-      const param1 = parseFloat(document.getElementById('param1').value) || 0;
-      const param2 = parseFloat(document.getElementById('param2').value) || 0;
-      const param3 = parseFloat(document.getElementById('param3').value) || 0;
-      const param4 = parseFloat(document.getElementById('param4').value) || 0;
-      const param5 = parseFloat(document.getElementById('param5').value) || 0;
-      
-      // Example calculation: sum of all parameters
-      // Replace this with your actual formula
-      const result = param1 + param2 + param3 + param4 + param5;
-      
-      document.getElementById('result').value = result.toFixed(2);
-    }
+   
   </script>
 
 </body>

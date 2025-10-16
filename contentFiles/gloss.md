@@ -1,3 +1,8 @@
+---
+title: Gloss of paper
+layout: description
+---
+
 Gloss is an important aspect of visual perception of objects. The perception of gloss can relate to a product’s finish, texture and how a
 sample is illuminated and viewed.
 

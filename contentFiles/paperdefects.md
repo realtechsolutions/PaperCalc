@@ -1,3 +1,8 @@
+---
+title: Paper defects
+layout: description
+---
+
 For solving paper defect problems, first type of defect is confirmed like holes,cracks,spots etc,then frequency is observed.
 
 If defects are appearing continuously then it is a likely a problem of machine pumps rolls,wire,felt etc.  

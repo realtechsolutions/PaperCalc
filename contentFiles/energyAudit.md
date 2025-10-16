@@ -1,3 +1,8 @@
+---
+title: Energy Audit
+layout: description
+---
+
 ### **Energy Audits in Paper Mills**
 
 An **energy audit** is a systematic process of evaluating energy use and identifying opportunities to improve energy efficiency within a paper mill. Given the energy-intensive nature of the paper industry, energy audits play a critical role in reducing operational costs, minimizing environmental impact, and improving overall productivity.

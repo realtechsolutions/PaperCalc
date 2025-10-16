@@ -1,3 +1,8 @@
+---
+layout : description
+title : Basis weight,caliper and bulk
+---
+
 ### Basis weight 
 Basis weight is weight in grams of a single sheet of area 1 m<sup>2</sup>. 
 

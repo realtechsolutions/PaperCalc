@@ -38,8 +38,8 @@ layout: home
                 listItem.addEventListener('click', (e) => {
                     e.preventDefault(); 
                     
-                    let path = item.name.toLowerCase().replace(/\s+/g, '');
-                    window.location.href = `contentFiles/${path}.html`
+                   let htmlFile = item.fileName.replace(/\.md$/i, '.html');
+                    window.location.href = `contentFiles/${htmlFile}`;
                     
                     // Prevent default link behavior
                     // const page = item.type === 'calculate' ? 'detail.html' : 'description.html';

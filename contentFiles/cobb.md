@@ -1,3 +1,8 @@
+---
+layout : description
+title : Cobb of paper
+---
+
 Cobb test measures amount of water absorbed in to the surface of a sized paper by exposing  paper surface to fixed amount of water for a certain
 period of time  usually 45 sec.   
 ### Test method:  

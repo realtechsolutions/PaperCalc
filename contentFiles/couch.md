@@ -1,3 +1,8 @@
+---
+title: Couch roll
+layout: description
+---
+
 Couch Roll is a rotating, perforated metal cylinder at the end of a fourdrinier papermaking machine\'s forming section that uses a vacuum to
 remove water from the wet paper web before the web is sent to the press section.  
 

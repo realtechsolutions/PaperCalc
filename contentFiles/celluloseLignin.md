@@ -1,3 +1,8 @@
+---
+layout : description
+title : Cellulose,lignini,hemicellulose
+---
+
 Cellulose  is a high molecular weight, stereo-regular, and linear polymer of repeating beta-D-glucopyranose units.  
 Simply speaking it is the chief structural element and major constituents of the cell wall of trees and plants.
 

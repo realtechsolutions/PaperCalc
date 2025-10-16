@@ -1,3 +1,8 @@
+---
+title: Felt Management
+layout: description
+---
+
 ### **Press Felt Management in Papermaking**
 Press felts are critical components in the **press section** of a paper machine. They play a key role in dewatering the paper sheet, supporting smooth sheet transfer, and maintaining sheet quality. Proper management and maintenance of press felts directly impact machine performance, energy efficiency, and product quality.
 

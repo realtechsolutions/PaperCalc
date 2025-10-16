@@ -1,3 +1,9 @@
+---
+layout : description
+title : Conditioning of paper
+---
+
+
 Paper is hygroscopic in nature ie it is capable of absorbing water from surroundings atmosphere.  
 
 Amount of absorbed water depends on humidity and temperature of air in contact with paper, hence even slight changes in humidity and temperature affect test results.
