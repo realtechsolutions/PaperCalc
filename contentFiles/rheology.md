@@ -25,7 +25,7 @@ For non newtonian fluids viscosity is not constant and it depends on shear force
 
 water is an example of newtonian fluid and toothpaste is an example of nonnewtonian fluid.
 
-For non newtonian fluids newtons equation is written as $$ F/A ={ k ({dv_x \\over dz})^n} $$
+For non newtonian fluids newtons equation is written as $$ \frac {F} {A} = { k ( \frac {dv_x} { dz})^n} $$
 
 Depending on n fluids are classified as follows,
 - n < 1	    pseudo plastic 

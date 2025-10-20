@@ -1,3 +1,7 @@
+---
+title: Suction Roll
+layout: description
+---
 Tearing Strength of paper is resistance of paper to tearing force it is subjected to.  
 It is a basic physical property of paper and paperboard.  
 It is measured in both machine  and cross directions.  

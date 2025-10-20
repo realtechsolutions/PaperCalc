@@ -1,3 +1,18 @@
+---
+layout : calc4
+title : Electric output of motor
+param1 : Current
+param2 : Voltage
+param3 : Power factor
+param4 : Motor efficiency
+unit1 : A
+unit2 : V
+unit3 : factor
+unit4: number
+resultUnit : kW
+---
+
+
 <details>
 <summary>
 Electric power of three phase motor is given by the formula 1.73* VI cosφ where cosφ is power factor of circuit.
@@ -17,3 +32,37 @@ The electrical power input is the product of the voltage, current and power fact
 
 The efficiency of a motor indicates how well it converts electrical energy into mechanical energy. The higher the efficiency, the less energy is wasted as heat and the lower the operating cost.
 </details>
+
+<script>  
+    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    inputs.forEach(input => {
+      // Check on input
+      input.addEventListener('input', () => {
+        if (input.value) {
+          input.closest('.outlined-field').classList.add('has-content');
+        } else {
+          input.closest('.outlined-field').classList.remove('has-content');
+        }        
+        // Auto-calculate on every input change
+        calculate();
+      });      
+      // Check on page load
+      if (input.value) {
+        input.closest('.outlined-field').classList.add('has-content');
+      }
+    });
+
+    // Calculate function 
+    function calculate() {
+      const v1 = parseFloat(document.getElementById('param1').value) || 0;
+      const v2 = parseFloat(document.getElementById('param2').value) || 0;      
+      const v3= parseFloat(document.getElementById('param3').value) || 0;
+      const v4= parseFloat(document.getElementById('param4').value) || 0;      
+     
+      const result = (v1 * v2 * v3* v4 * 1.73 / 1000)      
+      document.getElementById('result').value = result.toFixed(2);
+    }
+</script>
+
+
+

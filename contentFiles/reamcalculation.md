@@ -1,4 +1,45 @@
+---
+title : Ream weight (500 sheets)
+param1 : Length
+param2 : Width
+param3 : GSM
+unit1 : cm
+unit2 : cm
+unit3 : "g/m\u00B2"
+resultUnit : Kg
+layout: calc
+---
 Formula for calculation of ream weight is, 
 
 $$   Length \times width \times  gsm \times 0.5  
 $$ 
+
+
+script>  
+    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    inputs.forEach(input => {   
+      input.addEventListener('input', () => {
+        if (input.value) {
+          input.closest('.outlined-field').classList.add('has-content');
+        } else {
+          input.closest('.outlined-field').classList.remove('has-content');
+        }   
+        calculate();
+      });      
+      // Check on page load
+      if (input.value) {
+        input.closest('.outlined-field').classList.add('has-content');
+      }
+    });
+    // Calculate function 
+    function calculate() {
+      const v1 = parseFloat(document.getElementById('param1').value) || 0;
+      const v2 = parseFloat(document.getElementById('param2').value) || 0;      
+      const v3 = parseFloat(document.getElementById('param3').value) || 0;
+      //const v4= parseFloat(document.getElementById('param5').value) || 0;    
+      const result =    ((v1 / 100) * (v2 / 100) * v3 * 0.5)   
+      document.getElementById('result').value = result.toFixed(2);
+    }
+</script>
+
+ 

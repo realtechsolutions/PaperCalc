@@ -1,3 +1,7 @@
+---
+title: Hydrofoils 
+layout: description
+---
 An evaporator is a heat exchanger where liquid solution is concentrated by evaporating liquid.
 In a single effect evaporator the solution is heated with steam. Steam condensate and liquid vapours are removed and concentrated liquid is collected.
 

@@ -1,3 +1,8 @@
+---
+title: Pressure screen
+layout: description
+---
+
 Pressure screen is used for thin stock cleaning to remove large fiber bundles and other hard contaminants.  
 
 They have baskets screens with either slots or holes through which only individual fibers can pass.  

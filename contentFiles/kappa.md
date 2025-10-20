@@ -1,3 +1,7 @@
+---
+title: Hydrofoils 
+layout: description
+---
 Kappa number is volume (in ml) of 0.1 N potassium permanganate solution consumed by 1 g of pulp.
 
 ### Test method:

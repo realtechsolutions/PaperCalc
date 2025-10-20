@@ -1,5 +1,5 @@
 ---
-title: refining of pulp
+title: Refining of pulp
 layout: description
 ---
 The mechanical treatment given to the fibers in water to increase surface area, flexibility and promote bonding when dried is called refining.  

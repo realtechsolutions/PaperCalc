@@ -1,3 +1,12 @@
+---
+title: Vacuum pump capacity
+param1 : Leak Rate
+param2 : System Pressure
+unit1 : Torr liter/sec
+unit2 : Torr
+resultUnit : "m\u00B3/hr"
+layout: calc
+---
 Vacuum pump capacity is calculated by measuring leakage
 rate, ie increase of pressure after attaining vacuum level in certain time and expressed in units of Pressure.Vol/sec.   
 
@@ -55,3 +64,32 @@ Some examples of vacuum pumps and their typical capacities are:
 ### Reference
 
 [Ippta](https://www.ippta.co/Misc.Publication/DIY_Guidelines_for_Optimization_of_Wire_Vacuum.pdf)
+
+<script>  
+    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    inputs.forEach(input => {   
+      input.addEventListener('input', () => {
+        if (input.value) {
+          input.closest('.outlined-field').classList.add('has-content');
+        } else {
+          input.closest('.outlined-field').classList.remove('has-content');
+        }   
+        calculate();
+      });      
+      // Check on page load
+      if (input.value) {
+        input.closest('.outlined-field').classList.add('has-content');
+      }
+    });
+    // Calculate function 
+    function calculate() {
+      const v1 = parseFloat(document.getElementById('param1').value) || 0;
+      const v2 = parseFloat(document.getElementById('param2').value) || 0;      
+      //const v3 = parseFloat(document.getElementById('param3').value) || 0;
+      //const v4= parseFloat(document.getElementById('param5').value) || 0;    
+      const result = (v1 * 3.6 / v2)
+
+      document.getElementById('result').value = result.toFixed(2);
+    }
+</script>
+ 

@@ -1,3 +1,8 @@
+---
+title: pH of solutions 
+layout: description
+---
+
 pH is a scale used  to specify acidity or basicity  of an aqueous solution.
 
 

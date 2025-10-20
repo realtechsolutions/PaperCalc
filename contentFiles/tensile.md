@@ -1,3 +1,7 @@
+---
+title: tensile strength
+layout: description
+---
 Tensile strength is maximum stress to break a paper sheet.  
 It is one of the most important physical properties of paper and paperboard .  
 

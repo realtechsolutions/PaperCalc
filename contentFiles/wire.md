@@ -1,5 +1,5 @@
 ---
-title: Wire
+title: Paper machine Wire
 layout: description
 ---
 The moving screen at the wet end of paper machine where paper is formed is called wire. 

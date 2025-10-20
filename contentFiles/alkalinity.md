@@ -7,7 +7,7 @@ unit1 : ml
 unit2 : N
 unit3 : ml
 resultUnit : ppm 
-layout: calc3
+layout: calc
 ---
 
 Alkalinity is the capacity of water to resist changes in pH that would make water more acidic.  
@@ -37,7 +37,7 @@ where \( A \) is the burette reading and \( N \) is the normality of the acid.
 [Wikipedia](https://en.wikipedia.org/wiki/Alkalinity)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {     
       input.addEventListener('input', () => {
         if (input.value) {
@@ -56,6 +56,6 @@ where \( A \) is the burette reading and \( N \) is the normality of the acid.
       const normality = parseFloat(document.getElementById('param2').value) || 0;
       const sampleVolume= parseFloat(document.getElementById('param3').value) || 0; 
     const result = (beuretteReading*normality*50000)/sampleVolume      
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerHTML = result.toFixed(2);
     }
 </script>

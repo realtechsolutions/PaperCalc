@@ -1,3 +1,8 @@
+---
+title: Porosity of paper
+layout: description
+---
+
 Porosity is air resistance of paper.  
 It is indirect measure of fluid permeability in to paper and other structural parameters.
 

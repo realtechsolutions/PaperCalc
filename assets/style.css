@@ -4,7 +4,7 @@ body {
         }
 
         /* Style for the list items, which are not a standard Pico component */
-        .list-item {
+        /* .list-item {
             display: flex;
             align-items: center;
             padding: 0.75rem 1rem;
@@ -12,14 +12,32 @@ body {
             cursor: pointer;
             transition: background-color 0.2s;
         }
-        
-        .list-item:last-child {
+         */
+         .list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none !important;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--neutral-300); /* subtle separator */
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item:hover {
+  background-color: var(--neutral-100); /* or adjust for dark mode */
+}
+
+        /* .list-item:last-child {
             border-bottom: none;
             border-radius: 0 0 var(--pico-border-radius) var(--pico-border-radius);
-        }
-
+        } */
+/* Override default heading/paragraph margins */
         .list-item .item-name {
-            margin-bottom: 0; /* Override default heading/paragraph margins */
+            margin-bottom: 0; 
         }
         
         /* Custom icon styling */
@@ -76,3 +94,9 @@ body {
       .tab-content.active {
         display: block;
       }
+
+     .divider {
+  height: 1px;
+  background-color: var(--neutral-500); /* darker than neutral-300 */
+  margin: 0;
+}

@@ -1,3 +1,8 @@
+---
+title: Hydrofoils 
+layout: description
+---
+
 **Nanotechnology in papermaking** involves the application of nanomaterials and nanostructures to improve the properties of paper products and enhance the efficiency of the papermaking process. Nanotechnology operates on the nanoscale (1 to 100 nanometers) and offers unique physical, chemical, and mechanical benefits due to the high surface area and novel properties of nanomaterials.
 
 ---

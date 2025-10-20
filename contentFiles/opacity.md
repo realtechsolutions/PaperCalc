@@ -1,3 +1,8 @@
+---
+title: Hydrofoils 
+layout: description
+---
+
 Opacity of paper indicates resistance of paper to passage of light.  
 
 This property is useful in book printing where both sides of the paper are printed.
