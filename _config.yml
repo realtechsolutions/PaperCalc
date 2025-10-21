@@ -5,8 +5,8 @@ description: >-
   information about paper industry.
 
 # Leave these EMPTY for now (if it was working before)
-baseurl: ""
-url: ""
+baseurl: "/PaperCalc" 
+url: "https://realtechsolns.in"
 
 twitter_username: jekyllrb
 github_username: realtechsolutions
