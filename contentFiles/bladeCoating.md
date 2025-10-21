@@ -1,5 +1,5 @@
 ---
-layout : Blade coating
+layout : description
 title : Automatic process control
 ---
 
