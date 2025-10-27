@@ -1,4 +1,393 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parameter Calculator - Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    main.container {
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--pico-primary-background);
+      color: var(--pico-primary-inverse);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--pico-primary-inverse);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .page-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+      flex: 1;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      padding: 0.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      background: var(--pico-primary-background);
+      border-radius: 8px;
+      padding: 0.25rem;
+    }
+    
+    .tab-button {
+      flex: 1;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--pico-primary-inverse);
+      opacity: 0.7;
+    }
+    
+    .tab-button:hover {
+      opacity: 1;
+    }
+    
+    .tab-button.active {
+      background: var(--pico-primary-inverse);
+      color: var(--pico-primary);
+      opacity: 1;
+    }
+
+    /* Calculator */
+    #calculate {
+      border-radius: 8px;
+      padding: 0.75rem;
+    }
+
+    #calculate.tab-content {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+    }
+    
+    #calculate.tab-content.active {
+      display: flex;
+    }
+
+    /* Simple Header */
+    .param-header {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.3rem 0.75rem;
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+    }
+    
+    .param-header div:nth-child(1) {
+      flex: 4;
+      text-align: left;
+    }
+    
+    .param-header div:nth-child(2) {
+      flex: 2;
+      text-align: center;
+    }
+    
+    .param-header div:nth-child(3) {
+      flex: 3;
+      text-align: right;
+    }
+
+    /* Simple Rows */
+    .param-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.4rem 0.75rem;
+      margin-bottom: 0;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+      min-height: 36px;
+    }
+
+    .param-row:last-of-type {
+      margin-bottom: 0.5rem;
+    }
+
+    .param-label {
+      flex: 4;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+    }
+
+    .param-unit {
+      flex: 2;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .param-input {
+      flex: 3;
+      display: flex;
+      align-items: center;
+    }
+
+    .param-input input {
+      width: 100%;
+      padding: 0.3rem 0.4rem;
+      border-radius: 4px;
+      border: 1px solid var(--form-element-border-color);
+      font-size: 0.8rem;
+      text-align: right;
+      height: 28px;
+      line-height: normal;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+
+    .param-input input:focus {
+      outline: none;
+      border-color: var(--pico-primary);
+    }
+
+    /* Result Row - Slightly Different */
+    .result-field {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-top: 0.3rem;
+      padding: 0.3rem 0.75rem;
+      background: var(--pico-card-sectioning-background-color);
+      border-radius: 6px;
+      border: 1px solid var(--pico-primary);
+    }
+
+    .result-field > span:first-child {
+      flex: 4;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .result-unit {
+      flex: 2;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--muted-color);
+    }
+
+    .result-value-container {
+      flex: 3;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #result {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--pico-primary);
+      text-align: right;
+    }
+
+    /* Description Tab */
+    #description {
+      border-radius: 8px;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+
+    #description.tab-content {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      overflow-y: auto;
+    }
+    
+    #description.tab-content.active {
+      display: flex;
+    }
+    
+    /* Make dividers more visible - removed, using fixed rgba values instead */
+  </style>
+</head>
+<body>
+  <main class="container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <button class="back-button" aria-label="Back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="page-title">Power Calculator</h1>
+    </div>
+
+    <div class="content-wrapper">
+      <!-- Tabs -->
+      <nav class="tabs">
+        <button class="tab-button active" data-tab="calculate">Calculate</button>
+        <button class="tab-button" data-tab="description">Description</button>
+      </nav>
+
+      <!-- Calculate Tab -->
+      <div id="calculate" class="tab-content active">
+        <!-- Header -->
+        <div class="param-header">
+          <div>Parameter</div>
+          <div>Unit</div>
+          <div>Value</div>
+        </div>
+
+        <!-- Input Rows -->
+        {% if page.param1 %}
+        <div class="param-row">
+          <div class="param-label">{{ page.param1 }}</div>
+          <div class="param-unit">{{ page.unit1 }}</div>
+          <div class="param-input"><input type="number" id="param1" step="any" placeholder="Enter value"></div>
+        </div>
+        {% endif %}
+
+        {% if page.param2 %}
+        <div class="param-row">
+          <div class="param-label">{{ page.param2 }}</div>
+          <div class="param-unit">{{ page.unit2 }}</div>
+          <div class="param-input"><input type="number" id="param2" step="any" placeholder="Enter value"></div>
+        </div>
+        {% endif %}
+
+        {% if page.param3 %}
+        <div class="param-row">
+          <div class="param-label">{{ page.param3 }}</div>
+          <div class="param-unit">{{ page.unit3 }}</div>
+          <div class="param-input"><input type="number" id="param3" step="any" placeholder="Enter value"></div>
+        </div>
+        {% endif %}
+
+        {% if page.param4 %}
+        <div class="param-row">
+          <div class="param-label">{{ page.param4 }}</div>
+          <div class="param-unit">{{ page.unit4 }}</div>
+          <div class="param-input"><input type="number" id="param4" step="any" placeholder="Enter value"></div>
+        </div>
+        {% endif %}
+
+        {% if page.param5 %}
+        <div class="param-row">
+          <div class="param-label">{{ page.param5 }}</div>
+          <div class="param-unit">{{ page.unit5 }}</div>
+          <div class="param-input"><input type="number" id="param5" step="any" placeholder="Enter value"></div>
+        </div>
+        {% endif %}
+
+        <!-- Result Row -->
+        <div class="result-field">
+          <span>{{page.title}}</span>
+          <span class="result-unit">{{ page.resultUnit }}</span>
+          <div class="result-value-container">
+            <span id="result">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description Tab -->
+      <div id="description" class="tab-content">
+        {{ content }}
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Initialize theme from system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+
+    // Tab switching
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = button.getAttribute('data-tab');
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+
+    // Simple calculation demo
+    const inputs = document.querySelectorAll('input[type="number"]');
+    const resultEl = document.getElementById('result');
+
+    function calculate() {
+      const v = parseFloat(document.getElementById('param1').value) || 0;
+      const i = parseFloat(document.getElementById('param2').value) || 0;
+      const pf = parseFloat(document.getElementById('param3').value) || 0;
+      const eff = parseFloat(document.getElementById('param4').value) || 0;
+      const lf = parseFloat(document.getElementById('param5').value) || 0;
+
+      const power = (v * i * pf * (eff/100) * lf) / 1000;
+      resultEl.textContent = power.toFixed(3);
+    }
+
+    inputs.forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+
+    calculate();
+  </script>
+</body>
+</html>
+
+
+<!-- <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -137,10 +526,10 @@
     /* Parameter Rows */
     .param-row {
       display: grid;
-      grid-template-columns: 2.5fr 1fr 2fr;
-      gap: 0.75rem;
+      grid-template-columns: 4fr 2fr 3fr;
+      gap: 0.5rem;
       align-items: center;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.0.25rem;
       padding: 0.75rem 1rem;
       background: var(--pico-card-sectioning-background-color);
       border-radius: 8px;
@@ -331,7 +720,7 @@
 </head>
 <body>
   <main class="container">
-    <!-- Top Bar -->
+    Top Bar 
     <div class="top-bar">
       <a href="../index.html" class="back-button" aria-label="Back">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -342,15 +731,15 @@
     </div>
 
     <div class="content-wrapper">
-    <!-- Tab Navigation -->
+     Tab Navigation 
     <nav class="tabs">
       <button class="tab-button active" data-tab="calculate">Calculate</button>
       <button class="tab-button" data-tab="description">Description</button>
     </nav>
 
-    <!-- Calculate Tab -->
+     Calculate Tab 
     <div id="calculate" class="tab-content active">
-      <!-- Header Row -->
+       Header Row 
       <div class="param-header">
         <div>Parameter</div>
         <div>Unit</div>
@@ -397,7 +786,7 @@
       </div>
       {% endif %}
 
-      <!-- Result -->
+       Result 
       <div class="result-field">
         <span>{{page.title}}</span>
         <span class="result-unit">{{ page.resultUnit }}</span>
@@ -407,7 +796,7 @@
       </div>
     </div>
 
-    <!-- Description Tab -->
+     Description Tab 
     <div id="description" class="tab-content">
       {{ content }}
     </div>
@@ -435,4 +824,4 @@
 
 
 </body>
-</html>
+</html> -->

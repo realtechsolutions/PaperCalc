@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: site.title }}</title>
+
+  <!-- Pico.css for modern styling -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Top Navbar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      padding: 0 1rem;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar h1 {
+      color: white;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 1000;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100%;
+      background: var(--background-color);
+      box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+      transition: left 0.3s;
+      z-index: 1001;
+      overflow-y: auto;
+    }
+
+    .side-drawer.active {
+      left: 0;
+    }
+
+    .drawer-header {
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid var(--muted-border-color);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .drawer-nav {
+      padding: 1rem 0;
+    }
+
+    .drawer-link {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: var(--color);
+      text-decoration: none;
+      transition: background 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .drawer-link:hover {
+      background: var(--primary-hover);
+      border-left-color: var(--primary);
+    }
+
+    .main-content {
+      margin-top: 60px;
+      padding: 2rem;
+    }
+
+    /* Search box */
+    #search-box {
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* List items */
+    .item-icon {
+      color: var(--primary);
+      font-size: 1.25rem;
+      width: 1.5rem;
+      display: inline-block;
+      text-align: center;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem 0;
+    }
+
+    .list-item:hover {
+      background-color: var(--surface-1);
+      border-radius: 4px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: var(--neutral-500);
+      margin: 0.25rem 0;
+    }
+  </style>
+
+  <script src="assets/index.js" defer></script>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="top-bar">
+    <button class="menu-btn" onclick="toggleDrawer()" aria-label="Menu">
+      ☰
+    </button>
+    <h1>PaperCalc</h1>
+  </div>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+
+  <!-- Side Drawer -->
+  <nav class="side-drawer">
+    <div class="drawer-header">
+      <h2>PaperCalc</h2>
+    </div>
+    <div class="drawer-nav">
+      <a href="#about" class="drawer-link" onclick="closeDrawer()">About</a>
+      <a href="#feedback" class="drawer-link" onclick="closeDrawer()">Feedback</a>
+      <a href="#share" class="drawer-link" onclick="closeDrawer()">Share</a>
+    </div>
+  </nav>
+
+
+  <!-- Main content -->
+  <main class="container">
+    <h1 style="text-align:center;">{{ page.title }}</h1>
+    {{ content }}
+  </main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaperCalc</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="assets/index.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .top-bar h1 {
+      color: white;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .desktop-nav {
+      display: none;
+      gap: 0.5rem;
+    }
+
+    .desktop-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .desktop-nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 1000;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100%;
+      background: var(--background-color);
+      box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+      transition: left 0.3s;
+      z-index: 1001;
+      overflow-y: auto;
+    }
+
+    .side-drawer.active {
+      left: 0;
+    }
+
+    .drawer-header {
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid var(--muted-border-color);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .drawer-nav {
+      padding: 1rem 0;
+    }
+
+    .drawer-link {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: var(--color);
+      text-decoration: none;
+      transition: background 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .drawer-link:hover {
+      background: var(--primary-hover);
+      border-left-color: var(--primary);
+    }
+
+    .main-content {
+      margin-top: 60px;
+      padding: 2rem;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .menu-btn {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: flex;
+      }
+
+      .side-drawer {
+        display: none;
+      }
+
+      .drawer-overlay {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <button class="menu-btn" onclick="toggleDrawer()" aria-label="Menu">
+        ☰
+      </button>
+      <h1>PaperCalc</h1>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="#about">About</a>
+      <a href="#feedback">Feedback</a>
+      <a href="#share">Share</a>
+    </nav>
+  </div>
+
+  <!-- Drawer Overlay (Mobile only) -->
+  <div class="drawer-overlay" onclick="closeDrawer()"></div>
+
+  <!-- Side Drawer (Mobile only) -->
+  <nav class="side-drawer">
+    <div class="drawer-header">
+      <!-- <h2>PaperCalc</h2> -->
+    </div>
+    <div class="drawer-nav">
+      <a href="#about" class="drawer-link" onclick="closeDrawer()">About</a>
+      <a href="#feedback" class="drawer-link" onclick="closeDrawer()">Feedback</a>
+      <a href="#share" class="drawer-link" onclick="closeDrawer()">Share</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+  
+   {{ content }}
+      
+  </main>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.querySelector('.side-drawer');
+      const overlay = document.querySelector('.drawer-overlay');
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    function closeDrawer() {
+      const drawer = document.querySelector('.side-drawer');
+      const overlay = document.querySelector('.drawer-overlay');
+      drawer.classList.remove('active');
+      overlay.classList.remove('active');
+    }
+
+    // Close drawer on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+  </script>
+   
+</body>
+</html>
