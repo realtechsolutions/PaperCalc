@@ -1,5 +1,5 @@
 ---
-layout: calc3
+layout: calc
 param1 : Thruput
 param2 : Ingredient flow
 param3 : Ingredient Purity\n(100 for as such)
@@ -13,15 +13,11 @@ Dosing calculation is same as in batch,total volume becomes total flow rate and 
 
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+          
         // Auto-calculate on every input change
         calculate();
       });      
@@ -43,7 +39,7 @@ Dosing calculation is same as in batch,total volume becomes total flow rate and 
       // Replace this with your actual formula
       const result = (ingradientFlow * ingradientPurity / 100) / thruput
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 </script>

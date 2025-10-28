@@ -18,14 +18,10 @@ Pump Net positive suction pressure should be above vapour pressure of liquid oth
 problem in pump.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
         calculate();
       });      
       // Check on page load
@@ -41,7 +37,7 @@ problem in pump.
       const v4= parseFloat(document.getElementById('param4').value) || 0;    
       const result =  (v1 + v2 - v3 - v4 - v5)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
 

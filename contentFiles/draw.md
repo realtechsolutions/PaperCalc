@@ -1,6 +1,6 @@
 ---
 title : Machine draw
-layout: calc3
+layout: calc
 param1 : Machine speed
 param2 : Paper gsm
 param3 : machine Deckle
@@ -15,15 +15,11 @@ Paper machine throughput is calculated by the formula
 $$ \text {Production Rate} = \frac {\text {Machine Speed }\times  gsm \times Deckle \times 60}{1000000} $$
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+           
         // Auto-calculate on every input change
         calculate();
       });      
@@ -45,7 +41,7 @@ $$ \text {Production Rate} = \frac {\text {Machine Speed }\times  gsm \times Dec
       // Replace this with your actual formula
       const result = ( machineSpeed * gsm * deckle * 60 / 1000000)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 </script>

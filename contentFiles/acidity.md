@@ -10,7 +10,7 @@ resultUnit : ppm
 layout: calc
 ---
 
-#### {{page.title}}
+
 Acidity is the capacity of water to resist changes in pH that would make water more alkaline.
 It is measured by titrating sample with a alkali until pH changes abruptly indicated by color change of phenolphthalein or methyl orange indicator.  
 Acidity is of two types _methyl orange acidity_ and _phenolphthalein acidity_.

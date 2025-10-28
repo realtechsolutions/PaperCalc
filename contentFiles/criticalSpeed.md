@@ -15,15 +15,11 @@ Critical  speed is the speed at which dynamic forces causes a shaft or rotor to 
 
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+             
         // Auto-calculate on every input change
         calculate();
       });      
@@ -45,7 +41,7 @@ Critical  speed is the speed at which dynamic forces causes a shaft or rotor to 
       // Replace this with your actual formula
       const result = ((93.96 * outsideDia) / Math.sqrt(deflection))
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 

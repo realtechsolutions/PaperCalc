@@ -1,6 +1,6 @@
 ---
 title : Drying rate
-layout: calc5
+layout: calc
 param1 : Initial dryness
 param2 : Final dryness
 param3 : Production t/hr
@@ -17,15 +17,11 @@ resultUnit : "Kg/hr/m<sup>2</sup> "
 Drying Rate is defined as kg water removed per hour per unit surface area.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('.input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+        
         // Auto-calculate on every input change
         calculate();
       });      
@@ -47,7 +43,7 @@ Drying Rate is defined as kg water removed per hour per unit surface area.
       // Replace this with your actual formula
       const result = (((v2 / v1) - 1) * v3) / v4 * v5
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 </script>

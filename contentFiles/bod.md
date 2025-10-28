@@ -24,22 +24,16 @@ The BOD is used in measuring waste loadings to treatment plants and measuring ef
 [Wikipedia](https://en.wikipedia.org/wiki/Biochemical_oxygen_demand)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+        
         // Auto-calculate on every input change
         calculate();
       });      
       // Check on page load
-      if (input.value) {
-        input.closest('.outlined-field').classList.add('has-content');
-      }
+     
     });
 
     // Calculate function 
@@ -54,8 +48,9 @@ The BOD is used in measuring waste loadings to treatment plants and measuring ef
       // Replace this with your actual formula
       const result = ((v1 - v2) / v3)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerHTML = result.toFixed(2);
     }
 
 
 </script>
+

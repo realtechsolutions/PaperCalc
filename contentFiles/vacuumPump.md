@@ -66,14 +66,10 @@ Some examples of vacuum pumps and their typical capacities are:
 [Ippta](https://www.ippta.co/Misc.Publication/DIY_Guidelines_for_Optimization_of_Wire_Vacuum.pdf)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
         calculate();
       });      
       // Check on page load
@@ -89,7 +85,7 @@ Some examples of vacuum pumps and their typical capacities are:
       //const v4= parseFloat(document.getElementById('param5').value) || 0;    
       const result = (v1 * 3.6 / v2)
 
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
  

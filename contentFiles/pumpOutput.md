@@ -15,14 +15,10 @@ Power = \text{Flow rate}\times \text{Head developed }\times \text{Density of flu
 $$
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
         calculate();
       });      
       // Check on page load
@@ -38,7 +34,7 @@ $$
       //const v4= parseFloat(document.getElementById('param5').value) || 0;    
       const result =   (v1 * v2 * v3 * 9.81 / 3600000)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
 

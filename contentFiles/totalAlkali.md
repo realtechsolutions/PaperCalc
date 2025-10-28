@@ -36,14 +36,10 @@ v= volume of sample in ml.
 [Wikipedia](https://en.wikipedia.org/wiki/White_liquor)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+       
         calculate();
       });      
       // Check on page load
@@ -59,7 +55,7 @@ v= volume of sample in ml.
       //const v4= parseFloat(document.getElementById('param5').value) || 0;    
       const result = (v1 * v2 * 40 / v3)
 
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
  

@@ -32,14 +32,10 @@ Td is dry bulb temperature and Tw is wet bulb temperature.
 [Wikipedia](https://en.wikipedia.org/wiki/Humidity)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        i
         calculate();
       });      
       // Check on page load
@@ -55,7 +51,7 @@ Td is dry bulb temperature and Tw is wet bulb temperature.
       //const v4= parseFloat(document.getElementById('param5').value) || 0;    
       const result =  ((6.112 * Math.exp((17.502 * v2) / (240.97 + v2))) - 0.6687 * (1 + 0.00115 * v1) * (v1 - v2)) * 100 / (6.112 * Math.exp((17.502 * v1) / (240.97 + v1)))
 
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
 

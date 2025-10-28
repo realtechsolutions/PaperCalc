@@ -14,14 +14,10 @@ Head box Flow/unit width is equal to slice opening multiplied by jet velocity an
 For nozzle it is about 0.95 for low angle it is about 0.75.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+       
         calculate();
       });      
       // Check on page load
@@ -38,6 +34,6 @@ For nozzle it is about 0.95 for low angle it is about 0.75.
      
       const result =  (v1 * v2 * v3)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>

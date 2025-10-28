@@ -40,16 +40,10 @@ where \( A \) is the burette reading and \( N \) is the normality of the acid.
     const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {     
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+       
               calculate();
       });      
-          if (input.value) {
-        input.closest('.outlined-field').classList.add('has-content');
-      }
+         
     }); 
     function calculate() {
       const beuretteReading = parseFloat(document.getElementById('param1').value) || 0;
@@ -59,3 +53,22 @@ where \( A \) is the burette reading and \( N \) is the normality of the acid.
       document.getElementById('result').innerHTML = result.toFixed(2);
     }
 </script>
+
+<script>  
+    const inputs = document.querySelectorAll('input');    
+    inputs.forEach(input => {     
+      input.addEventListener('input', () => {
+       
+              calculate();
+      });      
+        
+    }); 
+    function calculate() {
+      const beuretteReading = parseFloat(document.getElementById('param1').value) || 0;
+      const normality = parseFloat(document.getElementById('param2').value) || 0;
+      const sampleVolume= parseFloat(document.getElementById('param3').value) || 0; 
+    const result = (beuretteReading*normality*40)/sampleVolume      
+      document.getElementById('result').innerHTML = result.toFixed(2);
+    }
+</script>
+

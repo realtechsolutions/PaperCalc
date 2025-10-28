@@ -19,15 +19,11 @@ Roll crowning is  a common method to reduce nip variations caused by roll deflec
 Roll crowning is calculated from Nip impression or deflection of roll.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('inpur');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+        
         // Auto-calculate on every input change
         calculate();
       });      
@@ -51,7 +47,7 @@ Roll crowning is calculated from Nip impression or deflection of roll.
       ((v1.pow(2.0) - v2.pow(2.0)) * -(-v3 - v4) / (2 * v3 * v4))
       const result = ((Math.pow(nipWidthEnd, 2) - Math.pow(nipWidthCenter, 2)) * -(-topDia - bottomDia)) / (2 * topDia * bottomDia)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 

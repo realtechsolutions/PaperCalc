@@ -39,15 +39,11 @@ M = molarity of FAS
 [Wikipedia](https://en.wikipedia.org/wiki/Chemical_oxygen_demand)
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+           
         // Auto-calculate on every input change
         calculate();
       });      
@@ -70,7 +66,7 @@ M = molarity of FAS
       // Replace this with your actual formula
       const result = ((fasBlank -  fasSample)*molarity *80000)/sampleVolume
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 

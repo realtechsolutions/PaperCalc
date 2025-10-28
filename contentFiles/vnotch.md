@@ -14,14 +14,10 @@ These plates are installed at the exit of channel for measuring real time flow.
 The flow of water is directly proportional to the head of water at weir.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
         calculate();
       });      
       // Check on page load
@@ -43,7 +39,7 @@ The flow of water is directly proportional to the head of water at weir.
             : 0.0;
 
 
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
  

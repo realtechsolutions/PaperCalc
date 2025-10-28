@@ -1,6 +1,6 @@
 ---
 title : Dosing Batch
-layout: calc3
+layout: calc
 param1 : Total volume
 param2 : Ingredient Volume
 param3 : Ingredient Purity\n(100 for as such)
@@ -14,15 +14,11 @@ gpl = 10 X percentage
 ppm = 1000 X gpl
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+       
         // Auto-calculate on every input change
         calculate();
       });      
@@ -44,7 +40,7 @@ ppm = 1000 X gpl
       // Replace this with your actual formula
       const result = (ingradientVol * ingradientPurity / 100) / totalVol
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 
 </script>

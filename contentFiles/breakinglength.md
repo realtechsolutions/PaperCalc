@@ -27,18 +27,16 @@ First paper sample is cut in pieces of 25 mm wide and then clamped in Tensile te
 The machine is then started and the load at which paper breaks is noted down as Tensile strength in kN/meter.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+        
         // Auto-calculate on every input change
         calculate();
-      });      
+      }
+      
+      );      
       // Check on page load
       if (input.value) {
         input.closest('.outlined-field').classList.add('has-content');
@@ -57,7 +55,7 @@ The machine is then started and the load at which paper breaks is noted down as 
       // Replace this with your actual formula
       const result = (102000 * v1 / v2)
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerHTML = result.toFixed(2);
     }
 
 

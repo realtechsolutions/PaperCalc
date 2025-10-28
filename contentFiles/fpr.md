@@ -22,14 +22,10 @@ Its value should remain steady and high enough to avoid deposit and drainage pro
 - Calculate FPR as per formula given above.  
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {     
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
               calculate();
       });      
           if (input.value) {
@@ -40,7 +36,7 @@ Its value should remain steady and high enough to avoid deposit and drainage pro
       const headBoxCy = parseFloat(document.getElementById('param1').value) || 0;
       const backWaterCy = parseFloat(document.getElementById('param2').value) || 0;
      
-    const retention = (headBoxCy - backWaterCy)/headBoxCy   
-      document.getElementById('result').value = retention.toFixed(2);
+    const retention = ((headBoxCy - backWaterCy)*100)/headBoxCy   
+      document.getElementById('result').innerText = retention.toFixed(2);
     }
 </script>

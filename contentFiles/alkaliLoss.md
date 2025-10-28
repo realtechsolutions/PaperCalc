@@ -37,7 +37,7 @@ where A is burette reading and N is normality of acid.
       const beuretteReading = parseFloat(document.getElementById('param1').value) || 0;
       const normality = parseFloat(document.getElementById('param2').value) || 0;
       const sampleVolume= parseFloat(document.getElementById('param3').value) || 0; 
-    const result = (beuretteReading*normality*50000)/sampleVolume      
+    const result = (beuretteReading*normality*40)/sampleVolume      
       document.getElementById('result').innerHTML = result.toFixed(2);
     }
 </script>

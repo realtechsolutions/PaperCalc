@@ -3,10 +3,10 @@ title : First pass ash retention
 param1 : Head Box ash
 param2: Back water ash
 
-unit1 : percent
-unit2 : percent
+unit1 : "%"
+unit2 : "%"
 
-resultUnit : percent
+resultUnit : "%"
 layout: calc
 ---
 First pass retention and ash retention are important process parameters for wet-end control of paper machine.
@@ -24,25 +24,19 @@ $$
 $$  
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {     
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }   
+        
               calculate();
       });      
-          if (input.value) {
-        input.closest('.outlined-field').classList.add('has-content');
-      }
+         
     }); 
     function calculate() {
       const headBoxAsh = parseFloat(document.getElementById('param1').value) || 0;
       const backWaterAsh = parseFloat(document.getElementById('param2').value) || 0;
      
-    const retention = (headBoxAsh - backWaterAsh)/headBoxAsh   
-      document.getElementById('result').value = retention.toFixed(2);
+    const retention = ((headBoxAsh - backWaterAsh)*100)/headBoxAsh   
+      document.getElementById('result').innerHTML = retention.toFixed(2);
     }
 </script>

@@ -14,15 +14,11 @@ Dandy roll is a hollow wire covered roll that rides on the paper machine wire an
 formation and if required to impart watermark.
 
 <script>  
-    const inputs = document.querySelectorAll('.outlined-field input:not([readonly])');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
-        if (input.value) {
-          input.closest('.outlined-field').classList.add('has-content');
-        } else {
-          input.closest('.outlined-field').classList.remove('has-content');
-        }        
+        
         // Auto-calculate on every input change
         calculate();
       });      
@@ -39,6 +35,6 @@ formation and if required to impart watermark.
      
       const result = (speed / (3.14 * rpm))
       
-      document.getElementById('result').value = result.toFixed(2);
+      document.getElementById('result').innerText = result.toFixed(2);
     }
 </script>
