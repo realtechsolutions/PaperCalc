@@ -1,6 +1,6 @@
 ---
 title : BOD
-layout: calc3
+layout: calc
 param1 : Initial DO
 param2 : Final DO
 param3 : mFraction of sample used

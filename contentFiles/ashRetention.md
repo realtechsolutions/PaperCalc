@@ -7,7 +7,7 @@ unit1 : percent
 unit2 : percent
 
 resultUnit : percent
-layout: calc2
+layout: calc
 ---
 First pass retention and ash retention are important process parameters for wet-end control of paper machine.
 

@@ -1,5 +1,5 @@
 ---
-layout : calc4
+layout : calc
 title : Change in crown of two rolls
 param1 : "Nip width at ends
 param2 : "Nip width at center

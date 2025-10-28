@@ -1,5 +1,5 @@
 ---
-layout : calc2
+layout : calc
 title : Dandy diameter
 param1 : M/C speed
 param2 : Max. rpm

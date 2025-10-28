@@ -1,5 +1,5 @@
 ---
-layout : calc2
+layout : calc
 title : Breaking length
 param1 : Tensile strength
 param2 : gsm

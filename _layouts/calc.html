@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parameter Calculator - Preview</title>
+  <title>Papercalc</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.0.6/pico.min.css">
   <style>
     body {
@@ -266,7 +266,7 @@
           <path d="M19 12H5M12 19l-7-7 7-7"/>
         </svg>
       </button>
-      <h1 class="page-title">Power Calculator</h1>
+      <h1 class="page-title">{{page.title}}</h1>
     </div>
 
     <div class="content-wrapper">
@@ -331,7 +331,7 @@
           <span>{{page.title}}</span>
           <span class="result-unit">{{ page.resultUnit }}</span>
           <div class="result-value-container">
-            <span id="result">—</span>
+            <span id="result"></span>
           </div>
         </div>
       </div>
@@ -349,9 +349,8 @@
     document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
 
     // Tab switching
-    const tabButtons = document.querySelectorAll('.tab-button');
+   const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
-    
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
         const target = button.getAttribute('data-tab');
@@ -363,25 +362,7 @@
     });
 
     // Simple calculation demo
-    const inputs = document.querySelectorAll('input[type="number"]');
-    const resultEl = document.getElementById('result');
-
-    function calculate() {
-      const v = parseFloat(document.getElementById('param1').value) || 0;
-      const i = parseFloat(document.getElementById('param2').value) || 0;
-      const pf = parseFloat(document.getElementById('param3').value) || 0;
-      const eff = parseFloat(document.getElementById('param4').value) || 0;
-      const lf = parseFloat(document.getElementById('param5').value) || 0;
-
-      const power = (v * i * pf * (eff/100) * lf) / 1000;
-      resultEl.textContent = power.toFixed(3);
-    }
-
-    inputs.forEach(input => {
-      input.addEventListener('input', calculate);
-    });
-
-    calculate();
+   
   </script>
 </body>
 </html>

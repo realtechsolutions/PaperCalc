@@ -1,5 +1,5 @@
 ---
-layout : calc2
+layout : calc
 title : Critical speed
 param1 : Out side dia
 param2 : Roll deflection

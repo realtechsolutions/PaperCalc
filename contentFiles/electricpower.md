@@ -1,5 +1,5 @@
 ---
-layout : calc4
+layout : calc
 title : Electric output of motor
 param1 : Current
 param2 : Voltage

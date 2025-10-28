@@ -1,5 +1,5 @@
 ---
-layout : calc4
+layout : calc
 title : Chemical oxygen demand
 param1 : Volume of FAS used for blank
 param2 : Volune of FAS used for sample 

@@ -5,7 +5,7 @@ param2: Back water Cy
 unit1 : "%"
 unit2 : "%"
 resultUnit : "%"
-layout: calc2
+layout: calc
 ---
 
 First pass retention or FPR is calculated by formula,
