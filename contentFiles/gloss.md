@@ -15,7 +15,7 @@ Gloss is measured by directing a constant intensity light beam, at a fixed angle
 reflected light from the same angle.
 This specular reflectance is measured using a gloss meter,generally gloss measurement is done at 75<sup>0</sup> for paper and paperboard.
 
- ### Test Method: 
+### Test Method: 
  
 Tappi T480 is generally used for testing gloss of paper and paperboard.
 1. Calibrate the equipment.

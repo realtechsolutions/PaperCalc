@@ -1,5 +1,5 @@
 ---
-title : Dosing Batch
+title : Dosing Batch calculation
 layout: calc
 param1 : Total volume
 param2 : Ingredient Volume
@@ -7,6 +7,7 @@ param3 : Ingredient Purity\n(100 for as such)
 unit1 : Liter
 unit2 : g
 unit3 : "%"
+resultUnit : g/l
 ---
 Generally amount of an ingredient present in total volume or weight is calculated in percentage,gpl,or ppm.  
 

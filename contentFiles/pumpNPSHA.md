@@ -1,10 +1,10 @@
 ---
-title : Pressure drop in pipes
-p param1 : Atmospheric pressure \n(10.33)
-param2 : Liquid level above/\nbelow pump \n(- in case below)
-param3 : Frictional pressure \nloss (approx 2 meters
-param4 : Vapour pressure of \nliquid
-param5 : Velocity head approx. \n2-2.5 m
+title : Pump NPSHA
+p param1 : "Atmospheric pressure <br>(10.33)"
+param2 : Liquid level above <br>below pump <br>(- in case below)
+param3 : Frictional pressure <br>loss (approx 2 meters
+param4 : Vapour pressure of <br>iquid
+param5 : Velocity head approx. <br>2-2.5 m
 unit1 : meter
 unit2 : meter
 unit3 : meter

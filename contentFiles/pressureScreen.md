@@ -10,6 +10,6 @@ They have baskets screens with either slots or holes through which only individu
 These screens have rotors inside baskets to continuously disperse the slurry.  
 
  <figure>
-    <img src = "images/pressurescreen.png" height= "475px"  width= "275px" "....Loading image" >
+    <img src = "images/pressurescreen.png" height= "475px"  width= "275px"  alt = "Pressure Screen" >
      <figcaption style = "font-size :13px"  >Pressure Screen</figcaption>
        </figure>

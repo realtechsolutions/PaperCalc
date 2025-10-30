@@ -1,10 +1,10 @@
 ---
 title: V notch flow rate
 param1 : "Head above <br> notch apex"
-param2 : "Notch angle <br>>(90 or 60)"
+param2 : "Notch angle <br> (90 or 60)"
 unit1 : mm
 unit2 : degree
-unit6 : "m\u00B3/hr"
+resultUnit : "m\u00B3/hr"
 layout: calc
 ---
 Triangular weir notches are sharp crested  V shaped thin plates.
@@ -43,22 +43,4 @@ The flow of water is directly proportional to the head of water at weir.
     }
 </script>
  
- Item(
-        "V Notch Flow Rate",
-        R.drawable.calculate,
-        fileName = "vnotch.md",
-        param1 = "Head above\nnotch apex",
-        param2 = "Notch angle \n(90 or 60)",
-        unit1 = "mm",
-        unit2 = "degree",
-        unit6 = "m\u00B3/hr"
-    ) {
-        if (v2 == 60.0) {
-            (v1.pow(2.5) * 0.7666)
-        } else if (v2 == 90.0) {
-            (v1.pow(2.5) * 1.3466 * 3.6)
-        } else {
-            // Toast.makeText(LocalContext.current,"Incorrect angle",Toast.LENGTH_SHORT).show()
-            0.0
-        }
-    },
+ 

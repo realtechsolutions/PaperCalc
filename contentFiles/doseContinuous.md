@@ -1,4 +1,5 @@
 ---
+title: Dosing continuous calculation
 layout: calc
 param1 : Thruput
 param2 : Ingredient flow

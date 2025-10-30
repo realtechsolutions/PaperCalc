@@ -1,5 +1,5 @@
 ---
-title : Head box flow rate
+title : Moment of inertia
 param1 : Density of material
 param2 : Length of Roll
 param3 : Outside dia. of roll

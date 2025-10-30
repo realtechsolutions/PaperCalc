@@ -1,12 +1,12 @@
 ---
 title : Alkali loss
-param1 : Beurette reading
+param1 : Burette reading
 param2: Normality of acid
 param3: Sample Volume 
 unit1 : ml
 unit2 : N
 unit3 : ml
-resultUnit : ppm 
+resultUnit : kg/T 
 layout: calc
 ---
 

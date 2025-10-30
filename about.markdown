@@ -1,18 +1,10 @@
 ---
 layout: page
 title: About
-permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+**PaperCalc** is an open source free project.  
+It can help students and professions working in paper industry to to do some common calculations.   
+It can also help in understanding some common terms used in paper industry.  
+Any body can see the source code at [PaperCalc](https://github.com/realtechsolutions/PaperCalc.git)  
+Any body who has a github account can contribute to the source code directly through github.

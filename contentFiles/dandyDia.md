@@ -3,8 +3,8 @@ layout : calc
 title : Dandy diameter
 param1 : M/C speed
 param2 : Max. rpm
-unit1 : m/sec
-unit2 : no
+unit1 : mpm
+unit2 : number
 resultUnit : meter
 ---
 

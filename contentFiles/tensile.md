@@ -1,6 +1,11 @@
 ---
-title: tensile strength
-layout: description
+title: Tensile index of paper
+layout: calc
+param1 : Tensile Strength
+param2 : Basis weight
+unit1 : "N/m"
+unit2 : "g/m\u00B2"
+resultUnit : "Nm/g"
 ---
 Tensile strength is maximum stress to break a paper sheet.  
 It is one of the most important physical properties of paper and paperboard .  

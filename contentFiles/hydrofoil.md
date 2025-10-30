@@ -20,7 +20,7 @@ Hydrofoils also create a brief pressure pulse as the fabric passes over the lead
 The alternating pressure and vacuum of a series of hydrofoils tends to move fibers around in the wet web, slightly improving
 the drainage and uniformity of the resulting paper.
 
-
+<figure>
 <img src = "images/foil.gif" width = "300px" height = "300px" alt = "....Loading image" />
       <figcaption style = "font-size :13px" > Image Source Wet-end Chemistry M Hubbe </figcaption>
       </figure>

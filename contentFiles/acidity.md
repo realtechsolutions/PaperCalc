@@ -1,6 +1,6 @@
 ---
 title : Acidity
-param1 : Beurette reading
+param1 : Burette reading
 param2: Normality of alkali solution
 param3: Sample Volume 
 unit1 : ml
@@ -35,7 +35,7 @@ where A is burette reading and N is normality of Alkali solution.
 
 <script>
   // Select all input fields in param rows
-  const inputs = document.querySelectorAll('.param-input input');
+  const inputs = document.querySelectorAll('input');
 
   // Attach event listeners
   inputs.forEach(input => {

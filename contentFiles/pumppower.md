@@ -13,7 +13,7 @@ layout: calc
 Pump power depends on total head (developed+frictional),flow rate and pump+motor efficiency.
 
 <script>  
-    const inputs = document.querySelectorAll('.input');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {   
       input.addEventListener('input', () => {
         
@@ -25,14 +25,15 @@ Pump power depends on total head (developed+frictional),flow rate and pump+motor
       }
     });
     // Calculate function 
-    function calculate() {
+    function calculate() {     
       const v1 = parseFloat(document.getElementById('param1').value) || 0;
       const v2 = parseFloat(document.getElementById('param2').value) || 0;      
       const v3 = parseFloat(document.getElementById('param3').value) || 0;
       //const v4= parseFloat(document.getElementById('param5').value) || 0;    
       const result =   ((v1 * v2) / (75 * v3))      
       document.getElementById('result').innerText = result.toFixed(2);
-    }
+   
+   }
 </script>
 
  

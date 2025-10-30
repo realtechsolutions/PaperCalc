@@ -1,24 +1,170 @@
-body {
-            /* Pico's default container has a max-width, which is great for desktop */
-            padding-top: 1rem;
-        }
+ body {
+      margin-top: 1rem;
+      padding: 0;
+   
+    }
 
-        /* Style for the list items, which are not a standard Pico component */
-        /* .list-item {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--pico-muted-border-color);
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-         */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .top-bar-left {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    .menu-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    .top-bar h1 {
+      color: white;
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .desktop-nav {
+      display: none;
+      gap: 0.5rem;
+    }
+
+    .desktop-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .desktop-nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 1000;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .side-drawer {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: var(--background-color);
+      box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+      transition: left 0.3s;
+      z-index: 1001;
+      overflow-y: auto;
+    }
+
+    .side-drawer.active {
+      left: 0;
+    }
+
+    .drawer-header {
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid var(--muted-border-color);
+    }
+
+    .drawer-header h2 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .drawer-nav {
+      padding: 1rem 0;
+    }
+
+    .drawer-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      color: var(--color);
+      text-decoration: none;
+      transition: background 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .drawer-link:hover {
+      background: var(--primary-hover);
+      border-left-color: var(--primary);
+    }
+
+    .drawer-link svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .main-content {
+      margin-top: 60px;
+      padding: 2rem;
+    }
+
+    /* Desktop styles */
+    @media (min-width: 768px) {
+      .menu-btn {
+        display: none;
+      }
+
+      .desktop-nav {
+        display: flex;
+      }
+
+      .side-drawer {
+        display: none;
+      }
+
+      .drawer-overlay {
+        display: none;
+      }
+    }
          .list-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   color: inherit;
-  text-decoration: none !important;
+  text-decoration: none !important;  
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--neutral-300); /* subtle separator */
 }
@@ -29,6 +175,12 @@ body {
 
 .list-item:hover {
   background-color: var(--neutral-100); /* or adjust for dark mode */
+}
+
+.list-item,
+.list-item p,
+.list-item i {
+  font-size: 1.5rem !important;
 }
 
         /* .list-item:last-child {
@@ -58,7 +210,7 @@ body {
         }
 
 
-         .my-tabs {
+         /* .my-tabs {
         display: flex;
         gap: 0.5rem;
         margin-bottom: 1rem;
@@ -97,6 +249,7 @@ body {
 
      .divider {
   height: 1px;
-  background-color: var(--neutral-500); /* darker than neutral-300 */
+      
+  background-color: var(--neutral-500);
   margin: 0;
-}
+} */

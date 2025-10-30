@@ -10,166 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="assets/index.js" defer></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 60px;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 1rem;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    .top-bar-left {
-      display: flex;
-      align-items: center;
-      height: 100%;
-    }
-
-    .menu-btn {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0;
-      margin: 0;
-      margin-right: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-    }
-
-    .top-bar h1 {
-      color: white;
-      margin: 0;
-      font-size: 1.5rem;
-      line-height: 1;
-    }
-
-    .desktop-nav {
-      display: none;
-      gap: 0.5rem;
-    }
-
-    .desktop-nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-
-    .desktop-nav a:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    .drawer-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-      z-index: 1000;
-    }
-
-    .drawer-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .side-drawer {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 100%;
-      background: var(--background-color);
-      box-shadow: 2px 0 8px rgba(0,0,0,0.15);
-      transition: left 0.3s;
-      z-index: 1001;
-      overflow-y: auto;
-    }
-
-    .side-drawer.active {
-      left: 0;
-    }
-
-    .drawer-header {
-      padding: 1.5rem 1rem;
-      border-bottom: 1px solid var(--muted-border-color);
-    }
-
-    .drawer-header h2 {
-      margin: 0;
-      font-size: 1.3rem;
-    }
-
-    .drawer-nav {
-      padding: 1rem 0;
-    }
-
-    .drawer-link {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
-      color: var(--color);
-      text-decoration: none;
-      transition: background 0.2s;
-      border-left: 3px solid transparent;
-    }
-
-    .drawer-link:hover {
-      background: var(--primary-hover);
-      border-left-color: var(--primary);
-    }
-
-    .drawer-link svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    .main-content {
-      margin-top: 60px;
-      padding: 2rem;
-    }
-
-    /* Desktop styles */
-    @media (min-width: 768px) {
-      .menu-btn {
-        display: none;
-      }
-
-      .desktop-nav {
-        display: flex;
-      }
-
-      .side-drawer {
-        display: none;
-      }
-
-      .drawer-overlay {
-        display: none;
-      }
-    }
+    
   </style>
 </head>
 <body>
@@ -184,9 +25,9 @@
     
     <!-- Desktop Navigation -->
     <nav class="desktop-nav">
-      <a href="#about">About</a>
-      <a href="#feedback">Feedback</a>
-      <a href="#share">Share</a>
+      <a href="about.html">About</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="share.html">Share</a>
     </nav>
   </div>
 
@@ -220,7 +61,7 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    <div class="container">
+    <div class="container-fluid">
     {{ content }}
     </div>
   </main>

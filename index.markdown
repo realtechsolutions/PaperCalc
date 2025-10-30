@@ -1,7 +1,7 @@
 ---
 layout: home
 ---
- <main class="container">  
+ <main class="container-fluid">  
        
         <input type="search" id="search-box" name="search" placeholder="Search for a topic or calculation">
         

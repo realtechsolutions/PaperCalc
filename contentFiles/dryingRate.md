@@ -17,7 +17,7 @@ resultUnit : "Kg/hr/m<sup>2</sup> "
 Drying Rate is defined as kg water removed per hour per unit surface area.
 
 <script>  
-    const inputs = document.querySelectorAll('.input');    
+    const inputs = document.querySelectorAll('input');    
     inputs.forEach(input => {
       // Check on input
       input.addEventListener('input', () => {
