@@ -161,7 +161,7 @@
     }
          .list-item {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 0.5rem;
   color: inherit;
   text-decoration: none !important;  
@@ -180,7 +180,7 @@
 .list-item,
 .list-item p,
 .list-item i {
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
 }
 
         /* .list-item:last-child {
