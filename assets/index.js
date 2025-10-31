@@ -94,56 +94,103 @@ const itemsList = [
 ];
 
 
- const listContainer = document.getElementById('item-list');
-        const searchBox = document.getElementById('search-box');
-        function renderList(items) {
-            listContainer.innerHTML = ''; // Clear content
-            if (items.length === 0) {
-                listContainer.innerHTML = '<div class="list-item"><p class="item-name">No items found.</p></div>';
-                return;
-            }
 
-            // sort a copy of items alphabetically by name (case-insensitive)
-            const sorted = items.slice().sort((a, b) =>
-              a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
-            );
+const listContainer = document.getElementById("item-list");
+const searchBox = document.getElementById("search-box");
 
-            sorted.forEach(item => {
-                const listItem = document.createElement('a'); // Use <a> tag for semantics and hover
-                listItem.className = 'list-item';
+function renderList(items) {
+  listContainer.innerHTML = "";
+
+  if (items.length === 0) {
+    listContainer.innerHTML = `<li>No results found.</li>`;
+    return;
+  }
+
+  const sorted = items.slice().sort((a, b) =>
+    a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+  );
+
+  sorted.forEach(item => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+
+    a.className = "list-item";
+    a.href = `contentFiles/${item.fileName.replace(/\.md$/i, ".html")}`;
+
+    const icon = document.createElement("span");
+    icon.className = "item-icon " + (item.type === "calculate" ? "fa-solid fa-calculator" : "fa-solid fa-info-circle");
+
+    const text = document.createElement("span");
+    text.className = "item-name";
+    text.textContent = item.name;
+ //const hr = document.createElement("hr")
+    a.appendChild(icon);
+    a.appendChild(text);
+    li.appendChild(a);
+    listContainer.appendChild(li);
+    //listContainer.appendChild(hr)
+  });
+}
+
+searchBox.addEventListener("input", e => {
+  const value = e.target.value.toLowerCase();
+  renderList(itemsList.filter(i => i.name.toLowerCase().includes(value)));
+});
+
+renderList(itemsList);
+
+
+
+//  const listContainer = document.getElementById('item-list');
+//         const searchBox = document.getElementById('search-box');
+//         function renderList(items) {
+//             listContainer.innerHTML = ''; // Clear content
+//             if (items.length === 0) {
+//                 listContainer.innerHTML = '<div class="list-item"><p class="item-name">No items found.</p></div>';
+//                 return;
+//             }
+
+//             // sort a copy of items alphabetically by name (case-insensitive)
+//             const sorted = items.slice().sort((a, b) =>
+//               a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
+//             );
+
+//             sorted.forEach(item => {
+//                 const listItem = document.createElement('a'); // Use <a> tag for semantics and hover
+//                 listItem.className = 'list-item';
                 
-                listItem.addEventListener('click', (e) => {
-                    e.preventDefault(); 
+//                 listItem.addEventListener('click', (e) => {
+//                     e.preventDefault(); 
                     
-                   let htmlFile = item.fileName.replace(/\.md$/i, '.html');
-                    window.location.href = `contentFiles/${htmlFile}`;
-                });              
-                const icon = document.createElement('i');
-                icon.className = item.type === 'calculate'
-                 // ? 'fa-solid fa-calculator item-icon'
-                  ? 'fa-solid fa-calculator item-icon'
-                  : 'fa-solid fa-info-circle item-icon';
-                icon.setAttribute('aria-hidden', 'true');
-                const nameParagraph = document.createElement('p');
-                nameParagraph.className = 'item-name';
-                nameParagraph.textContent = item.name;
-                listItem.appendChild(icon);
-                listItem.appendChild(nameParagraph);
-                listContainer.appendChild(listItem);
-                //  if (index < sorted.length - 1) {
-     const hr = document.createElement('hr');
-    listContainer.appendChild(hr);
-    //}
+//                    let htmlFile = item.fileName.replace(/\.md$/i, '.html');
+//                     window.location.href = `contentFiles/${htmlFile}`;
+//                 });              
+//                 const icon = document.createElement('i');
+//                 icon.className = item.type === 'calculate'
+//                  // ? 'fa-solid fa-calculator item-icon'
+//                   ? 'fa-solid fa-calculator item-icon'
+//                   : 'fa-solid fa-info-circle item-icon';
+//                 icon.setAttribute('aria-hidden', 'true');
+//                 const nameParagraph = document.createElement('p');
+//                 nameParagraph.className = 'item-name';
+//                 nameParagraph.textContent = item.name;
+//                 listItem.appendChild(icon);
+//                 listItem.appendChild(nameParagraph);
+//                 listContainer.appendChild(listItem);
+//                 //  if (index < sorted.length - 1) {
+//      const hr = document.createElement('hr');
+//     listContainer.appendChild(hr);
+//     //}
 
                 
-            });
-        }        
-        searchBox.addEventListener('input', (event) => {
-            const searchTerm = event.target.value.toLowerCase();
-            const filteredList = itemsList.filter(item => 
-                item.name.toLowerCase().includes(searchTerm)
-            );
-            renderList(filteredList);
-        });
-        // Initial render
-        renderList(itemsList);
+//             });
+//         }        
+//         searchBox.addEventListener('input', (event) => {
+//             const searchTerm = event.target.value.toLowerCase();
+//             const filteredList = itemsList.filter(item => 
+//                 item.name.toLowerCase().includes(searchTerm)
+//             );
+//             renderList(filteredList);
+//         });
+//         // Initial render
+//         renderList(itemsList);
