@@ -6,85 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PaperCalc</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="assets/index.js" defer></script>
   <style>
-    
+   
   </style>
 </head>
 <body>
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <button class="menu-btn" onclick="toggleDrawer()" aria-label="Menu">
-        ☰
-      </button>
-      <h1>PaperCalc</h1>
-    </div>
+
+  <header class="top-bar">
+    <h1>PaperCalc</h1>
     
     <!-- Desktop Navigation -->
     <nav class="desktop-nav">
-      <a href="about.html">About</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="share.html">Share</a>
+      <a href="{{ site.baseurl }}/about.html">About</a>
+      <a href="{{ site.baseurl }}/feedback.html">Feedback</a>
+      <a href="{{ site.baseurl }}/share.html">Share</a>
     </nav>
-  </div>
 
-  <!-- Drawer Overlay (Mobile only) -->
-  <div class="drawer-overlay" onclick="closeDrawer()"></div>
-
-  <!-- Side Drawer (Mobile only) -->
-  <nav class="side-drawer">
-   
-    <div class="drawer-nav">
-      <a href="#about" class="drawer-link" onclick="closeDrawer()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-        </svg>
-        About
-      </a>
-      <a href="#feedback" class="drawer-link" onclick="closeDrawer()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
-        </svg>
-        Feedback
-      </a>
-      <a href="#share" class="drawer-link" onclick="closeDrawer()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-        </svg>
-        Share
-      </a>
+    <!-- Mobile Dropdown -->
+    <div class="mobile-dropdown">
+      <button class="menu-btn" onclick="toggleDropdown()">☰</button>
+      <div id="dropdown" class="dropdown-content">
+        <a href="about.html">About</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="share.html">Share</a>
+      </div>
     </div>
-  </nav>
+  </header>
 
   <!-- Main Content -->
-  <!-- <main class="main-content">
-    <div class="container-fluid"> -->
-    {{ content }}
-    <!-- </div>
-  </main> -->
+  {{ content }}
 
   <script>
-    function toggleDrawer() {
-      const drawer = document.querySelector('.side-drawer');
-      const overlay = document.querySelector('.drawer-overlay');
-      drawer.classList.toggle('active');
-      overlay.classList.toggle('active');
+    function toggleDropdown() {
+      const dropdown = document.getElementById('dropdown');
+      dropdown.classList.toggle('show');
     }
 
-    function closeDrawer() {
-      const drawer = document.querySelector('.side-drawer');
-      const overlay = document.querySelector('.drawer-overlay');
-      drawer.classList.remove('active');
-      overlay.classList.remove('active');
+    // Close dropdown when clicking outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.menu-btn')) {
+        const dropdown = document.getElementById('dropdown');
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        }
+      }
     }
 
-    // Close drawer on escape key
+    // Close dropdown on escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        closeDrawer();
+        const dropdown = document.getElementById('dropdown');
+        dropdown.classList.remove('show');
       }
     });
   </script>

@@ -139,58 +139,11 @@ searchBox.addEventListener("input", e => {
 
 renderList(itemsList);
 
+function toggleDrawer() {
+  document.getElementById("drawer").classList.toggle("open");
+  document.getElementById("overlay").classList.toggle("show");
+}
 
 
-//  const listContainer = document.getElementById('item-list');
-//         const searchBox = document.getElementById('search-box');
-//         function renderList(items) {
-//             listContainer.innerHTML = ''; // Clear content
-//             if (items.length === 0) {
-//                 listContainer.innerHTML = '<div class="list-item"><p class="item-name">No items found.</p></div>';
-//                 return;
-//             }
 
-//             // sort a copy of items alphabetically by name (case-insensitive)
-//             const sorted = items.slice().sort((a, b) =>
-//               a.name.localeCompare(b.name, undefined, { sensitivity: 'base' })
-//             );
 
-//             sorted.forEach(item => {
-//                 const listItem = document.createElement('a'); // Use <a> tag for semantics and hover
-//                 listItem.className = 'list-item';
-                
-//                 listItem.addEventListener('click', (e) => {
-//                     e.preventDefault(); 
-                    
-//                    let htmlFile = item.fileName.replace(/\.md$/i, '.html');
-//                     window.location.href = `contentFiles/${htmlFile}`;
-//                 });              
-//                 const icon = document.createElement('i');
-//                 icon.className = item.type === 'calculate'
-//                  // ? 'fa-solid fa-calculator item-icon'
-//                   ? 'fa-solid fa-calculator item-icon'
-//                   : 'fa-solid fa-info-circle item-icon';
-//                 icon.setAttribute('aria-hidden', 'true');
-//                 const nameParagraph = document.createElement('p');
-//                 nameParagraph.className = 'item-name';
-//                 nameParagraph.textContent = item.name;
-//                 listItem.appendChild(icon);
-//                 listItem.appendChild(nameParagraph);
-//                 listContainer.appendChild(listItem);
-//                 //  if (index < sorted.length - 1) {
-//      const hr = document.createElement('hr');
-//     listContainer.appendChild(hr);
-//     //}
-
-                
-//             });
-//         }        
-//         searchBox.addEventListener('input', (event) => {
-//             const searchTerm = event.target.value.toLowerCase();
-//             const filteredList = itemsList.filter(item => 
-//                 item.name.toLowerCase().includes(searchTerm)
-//             );
-//             renderList(filteredList);
-//         });
-//         // Initial render
-//         renderList(itemsList);
