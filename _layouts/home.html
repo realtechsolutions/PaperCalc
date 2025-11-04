@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +9,19 @@
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="assets/index.js" defer></script>
-  <style>
-   
-  </style>
+
 </head>
+
 <body>
 
   <header class="top-bar">
     <h1>PaperCalc</h1>
-    
+
     <!-- Desktop Navigation -->
     <nav class="desktop-nav">
-      <a href="{{ site.baseurl }}/about.html">About</a>
-      <a href="{{ site.baseurl }}/feedback.html">Feedback</a>
-      <a href="{{ site.baseurl }}/share.html">Share</a>
+      <a href="about.html">About</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="share.html">Share</a>
     </nav>
 
     <!-- Mobile Dropdown -->
@@ -46,7 +45,7 @@
     }
 
     // Close dropdown when clicking outside
-    window.onclick = function(event) {
+    window.onclick = function (event) {
       if (!event.target.matches('.menu-btn')) {
         const dropdown = document.getElementById('dropdown');
         if (dropdown.classList.contains('show')) {
@@ -64,4 +63,5 @@
     });
   </script>
 </body>
+
 </html>
