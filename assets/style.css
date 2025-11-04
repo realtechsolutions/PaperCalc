@@ -138,11 +138,17 @@
     }
 
 /* List styling */
-.list {
+/* .list {
   list-style: none;
   margin-left:2.5rem ;
   margin-right: 2.0rem;
   padding: 0;
+} */
+
+.list {
+  list-style: none;
+  padding: 0 2rem;   /* instead of margin-left / margin-right */
+  margin: 0;
 }
 a{ text-decoration: none !important; }
 .list li::marker {
@@ -182,7 +188,7 @@ a{ text-decoration: none !important; }
   margin: 0;
 }
 #search-box {
-  width: 90%;
+  width: 80%;
   /* padding: 0.5rem 0.75rem;
   border: 1px solid var(--neutral-300);
   border-radius: var(--border-radius);
@@ -190,5 +196,6 @@ a{ text-decoration: none !important; }
   margin-left: 2.5rem;
   margin-right: 2rem;
 }
+
 
   
