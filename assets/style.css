@@ -188,13 +188,13 @@ a{ text-decoration: none !important; }
   margin: 0;
 }
 #search-box {
-  width: 75%;
+  width: 80%;
   /* padding: 0.5rem 0.75rem;
   border: 1px solid var(--neutral-300);
   border-radius: var(--border-radius);
   font-size: 1rem; */
-  margin-left: 2.5rem;
-  margin-right: 2rem;
+  margin-left: 2.25rem;
+  margin-right: 1.75rem;
 }
 
 
